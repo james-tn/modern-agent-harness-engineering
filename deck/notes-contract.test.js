@@ -1,6 +1,6 @@
 const assert = require("node:assert/strict");
 const test = require("node:test");
-const { validateDemoNarrative, validatePublicNarrative } = require("./notes-contract");
+const { validateDemoNarrative, validatePublicNarrative, validateAudienceDocumentation } = require("./notes-contract");
 
 for (const phrase of ["only demonstrates preselection", "not observed behavior", "is an extension"]) {
   test(`rejects an unscoped under-claim: ${phrase}`, () => {
@@ -36,5 +36,32 @@ test("repository citations use the public destination rather than a private sour
   assert.doesNotThrow(() => validatePublicNarrative(
     "https://github.com/james-tn/modern-agent-harness-engineering/tree/main "
     + "https://github.com/microsoft/agent-framework",
+  ));
+});
+
+for (const text of [
+  "## Slide-to-agenda mapping",
+  "## Speaker ownership",
+  "Read the presenter runbook.",
+  "Prepared ownership totals: 11 minutes.",
+  "| Slide | Cumulative timing |",
+  "The next handoff names the speaker.",
+  "**Presenters:** Example Person",
+  "| 0:00–6:00 | Welcome | Example Person |",
+]) {
+  test(`audience docs reject logistics: ${text}`, () => {
+    assert.throws(() => validateAudienceDocumentation(text), /presenter logistics/);
+  });
+}
+
+test("audience docs require useful content rather than an empty stripped README", () => {
+  assert.throws(
+    () => validateAudienceDocumentation("# Demo", ["Strict acceptance gates"]),
+    /missing section/,
+  );
+  assert.doesNotThrow(() => validateAudienceDocumentation(
+    "# Demo\n\n## Strict acceptance gates\n\nThree execution attempts; no unlimited retries.\n"
+    + "## Recall and retain observations\n\nMemory does not override policy.",
+    ["Strict acceptance gates", "Recall and retain observations"],
   ));
 });

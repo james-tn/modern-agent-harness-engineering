@@ -22,11 +22,11 @@ more calls or consumes more total tokens.
 
 All retained approval receipts say `automated-ui-validation-not-human`.
 The browser test deliberately exercised the real blocking approval interface;
-these receipts are **not human review**. A presenter must inspect and approve a
+these receipts are **not human review**. An operator must inspect and approve a
 new result themselves. Certification here means the local artifact passed the
 checks and the recorded approval boundary, not external publication.
 
-## Exact landmarks for slides 9-11
+## Trace landmarks
 
 Within each directory, `harness-config.json` is the effective configuration;
 `telemetry.json` contains native MAF spans and separately labeled application
@@ -62,14 +62,14 @@ also cover nonfatal persistence failure. The
 [five-run polling report](polling-regression.json) is supplemental smoke evidence:
 it observed no exhausted writes and does not alone prove lock recovery.
 
-For stage budgeting, the retained live warmup, recall and all-loaded examples
+The retained live warmup, recall and all-loaded examples
 reached `approval_requested` in **101.4, 58.4 and 66.6 seconds**, respectively.
 These are individual trace measurements, not latency guarantees or comparative
 benchmarks; subsequent review waits are excluded. The initial input-token counts
 were 3,646, 3,703 and 3,461, respectively. Progressive loading is demonstrable
 here, but these examples do **not** establish a token-saving advantage.
 
-## Rehearsal and replay
+## Run and inspect
 
 For **new** runs, use the ignored default output:
 
@@ -87,14 +87,13 @@ use the retained output directory:
 
 Open `http://127.0.0.1:8765`, then **Observe** and choose the run. Call it
 **saved live evidence**, not a newly completed episode. Use the default ignored
-output for subsequent rehearsals so this evidence set is not mixed with new
+output for subsequent executions so this evidence set is not mixed with new
 runs. Never overwrite a retained run directory.
 
-Warm one live run before the talk. During the five-minute slot, start one
-governed run, inspect its actual load and recall, then review the saved seeded
-near-miss/correction. Switch to saved evidence if endpoint latency consumes the
-slot. The old embedded 164-second video predates this implementation and proves
-none of its live-loading or cross-run-memory behavior.
+The [demo guide](../README.md) describes how to reproduce skill loading,
+cross-run recall and the seeded correction comparison. The old 164-second
+recording predates this implementation and does not demonstrate its live-loading
+or cross-run-memory behavior.
 
 `manifest.json` names the five authoritative examples. The deck validator checks
 native model/tool-call correlation, skill lifecycle, memory provenance,

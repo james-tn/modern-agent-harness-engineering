@@ -1,7 +1,8 @@
 # Equity Event Impact Analyst: runtime
 
-The [presenter runbook](../README.md) owns the five-minute sequence. The domain
-is an available synthetic illustration, not investment advice.
+The [demo guide](../README.md) explains the workflow, controls and evidence.
+This document covers installation, CLI usage and runtime implementation.
+The domain is a synthetic illustration, not investment advice.
 
 ## Install
 
@@ -11,8 +12,19 @@ Use Python **3.11 or later**. From the repository root:
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r demo\agent\requirements.txt
 .\.venv\Scripts\python.exe -m pytest demo\agent\tests -q
+```
+
+For live runs, configure access in the same terminal **before** starting the
+server. Skip this block for the explicit offline profile:
+
+```powershell
 az login
 $env:AZURE_OPENAI_ENDPOINT = "https://YOUR-RESOURCE.openai.azure.com/"
+```
+
+Start the console from the repository root:
+
+```powershell
 cd demo\agent
 ..\..\.venv\Scripts\python.exe -m equity_event serve
 ```
@@ -34,7 +46,7 @@ ship independently. The umbrella package is unnecessary. If a mirror lags, use
 the [official release artifacts](https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0)
 or an approved index; do not silently downgrade.
 
-## CLI rehearsal
+## CLI usage
 
 From `demo\agent`, the console and CLI use **the same `run_live_episode`**:
 
@@ -59,7 +71,7 @@ The UI edits the same schema. Never overwrite evidence to "rerun" it.
 
 The CLI exposes only `run` and `serve`. Retired A/B commands and generated
 examples are superseded by this shared runtime and the
-[curated evidence](../live-evidence/README.md). For offline rehearsal, use
+[curated evidence](../live-evidence/README.md). For offline execution, use
 `run --model scripted`, not the old status-page workflow.
 
 ## Components and ownership

@@ -18,4 +18,16 @@ function validatePublicNarrative(text) {
   }
 }
 
-module.exports = { validateDemoNarrative, validatePublicNarrative };
+function validateAudienceDocumentation(text, requiredHeadings = []) {
+  const logistics = /slide[- ]to[- ]agenda mapping|speaker ownership|presenter runbook|prepared ownership totals|cumulative timing|\bhandoffs?\b|^\s*\*\*Presenters:\*\*/im;
+  const schedule = /^\|[^|\r\n]*\b\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}[^|\r\n]*\|/m;
+  if (logistics.test(text) || schedule.test(text)) {
+    throw new Error("Audience documentation must not contain presenter logistics.");
+  }
+  const headings = new Set([...text.matchAll(/^#{1,6}\s+(.+?)\s*$/gm)].map((match) => match[1]));
+  for (const heading of requiredHeadings) {
+    if (!headings.has(heading)) throw new Error(`Audience documentation missing section: ${heading}`);
+  }
+}
+
+module.exports = { validateDemoNarrative, validatePublicNarrative, validateAudienceDocumentation };

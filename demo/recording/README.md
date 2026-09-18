@@ -14,4 +14,4 @@ Preserved unchanged: [MP4](../media/equity-event-harness-demo.mp4),
 
 The obsolete recorder scripts and npm recording command were retired; their
 historical versions remain in Git history. No new recording was made.
-Use the [presenter runbook](../README.md) for the current live/offline workflow.
+Use the [demo guide](../README.md) for the current live/offline workflow.

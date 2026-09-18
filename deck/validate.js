@@ -3,7 +3,7 @@ const path = require("path");
 const crypto = require("crypto");
 const { execFileSync } = require("child_process");
 const { validateLiveEvidence } = require("./validate-live");
-const { validateDemoNarrative, validatePublicNarrative } = require("./notes-contract");
+const { validateDemoNarrative, validatePublicNarrative, validateAudienceDocumentation } = require("./notes-contract");
 
 const root = path.join(__dirname, "..");
 const pptx = process.env.DECK_OUT
@@ -229,36 +229,26 @@ for (const [i, page] of deck.slides.entries()) {
 if (elapsed !== 2700 || preparedSeconds !== 1800 || demoSeconds !== 300 || discussionSeconds !== 900) fail("Expected 30:00 prepared including a 5:00 demo, then a proposed 15:00 discussion.");
 if (speakerSeconds.get(james) !== 660 || speakerSeconds.get(alexandre) !== 660 || speakerSeconds.get(kunwarpreet) !== 480) fail("Prepared speaker allocation must be James 11, Alexandre 11, Kunwarpreet 8 minutes.");
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8");
-const runbook = fs.readFileSync(path.join(root, "demo", "README.md"), "utf8");
-const agendaRows = [...readme.matchAll(/^\|\s*(\d+)\s*\|([^\r\n]+)$/gm)];
-if (agendaRows.length !== 13) fail("README must map all 13 slides.");
-agendaRows.forEach((row, i) => {
-  const expected = i === 12 ? "45:00" : timings[i];
-  const cells = row[2].split("|").map((cell) => cell.trim());
-  if (Number(row[1]) !== i + 1 || !cells.includes(expected)) fail(`README slide ${i + 1} timing mismatch.`);
-  if (!cells.includes(speakers[i])) fail(`README slide ${i + 1} speaker mismatch.`);
-});
-for (const [name, doc] of [["README", readme], ["presenter runbook", runbook]]) {
-  for (const token of ["Public snapshot", "30+15", "proposed", james, alexandre, kunwarpreet]) {
-    if (!doc.replace(/\r?\n/g, " ").includes(token)) fail(`${name} missing public scope/timing/speaker detail: ${token}`);
-  }
-}
-const ownership = [
-  ["0:00–6:00", james], ["6:00–14:00", alexandre], ["14:00–22:00", kunwarpreet],
-  ["22:00–25:00", alexandre], ["25:00–30:00", james], ["30:00–45:00", allSpeakers],
-];
-for (const doc of [readme, runbook]) {
-  for (const [range, speaker] of ownership) {
-    if (!doc.split(/\r?\n/).some((row) => row.includes(range) && row.includes(speaker))) fail(`Speaker ownership map missing ${range}: ${speaker}`);
-  }
-}
-const allDeckText = deck.slides.map((page) => page.text + "\n" + page.notes).join("\n");
+const demoGuide = fs.readFileSync(path.join(root, "demo", "README.md"), "utf8");
 try {
-  validatePublicNarrative(allDeckText + readme + runbook);
+  validateAudienceDocumentation(readme, [
+    "From prompts to complete episodes", "What a harness controls",
+    "Three engineering practices", "Demo: Equity Event Impact Analyst", "Run and explore", "Boundaries",
+  ]);
+  validateAudienceDocumentation(demoGuide, [
+    "What the agent does", "Configure and run", "Progressive skill loading",
+    "Strict acceptance gates", "Recall and retain observations", "Inspect a run", "Implementation boundaries",
+  ]);
 } catch (error) {
   fail(error.message);
 }
-if (/https?:\/\/[^\s]*(?:sharepoint\.com|teams\.microsoft\.com|teams\.live\.com)/i.test(allDeckText + readme + runbook)) fail("Private meeting URLs must not be copied into the deck or runbooks.");
+const allDeckText = deck.slides.map((page) => page.text + "\n" + page.notes).join("\n");
+try {
+  validatePublicNarrative(allDeckText + readme + demoGuide);
+} catch (error) {
+  fail(error.message);
+}
+if (/https?:\/\/[^\s]*(?:sharepoint\.com|teams\.microsoft\.com|teams\.live\.com)/i.test(allDeckText + readme + demoGuide)) fail("Private meeting URLs must not be copied into the deck or audience documentation.");
 function expectSlide(number, visible, noteTokens = []) {
   const page = deck.slides[number - 1];
   for (const token of visible) {
@@ -283,7 +273,7 @@ expectSlide(12, ["proposed 30:00–45:00", "TOOL OVERLOAD", "CONTEXT DRIFT", "AC
 expectSlide(13, ["PUBLIC GUIDANCE", "ACTUAL DEMO EVIDENCE", "DELIVERY BOUNDARY", "Synthetic illustration only", "proposed allocation"], ["python-1.18.0", "https://github.com/james-tn/modern-agent-harness-engineering"]);
 if (deck.videoCount !== 1 || deck.videoHash !== narration.video_sha256 || !deck.mediaLinked || !deck.referenceBound) fail("Slide 10 must embed and reference the exact narrated MP4.");
 
-console.log("slides=13\nnotes=13\nprepared_content=30:00\ndemo=5:00\ndiscussion=15:00_proposed\nreadme_timing=matched");
+console.log("slides=13\nnotes=13\nprepared_content=30:00\ndemo=5:00\ndiscussion=15:00_proposed\naudience_docs=concepts_and_demo");
 console.log("prepared_speakers=James_11m_Alexandre_11m_Kunwarpreet_8m\nvisible_presenter_labels=13\nnamed_handoffs=13");
 console.log(`xml_parts_valid=${deck.xmlParts}\nvisible_source_footers=13\nsource_footer_min_pt=10.5`);
 console.log("note_sections_and_sources=13\npublic_delivery_choices=explicit\nprivate_meeting_urls=absent\nconceptual_slides=framework_neutral");
