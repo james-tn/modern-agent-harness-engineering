@@ -1,0 +1,107 @@
+{
+  "episode_id": "acx-2026-q2-earnings",
+  "sources": [
+    {
+      "source_id": "src-public-bundle",
+      "artifact": "demo/sample-input/public-sources.json",
+      "content_sha256": "4b898a971c262b5a1bb9c34a2e4a1558af73a1bc2d3255ab75dcd1f58c402e3f",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-market-snapshot",
+      "artifact": "demo/sample-input/market-prices.json",
+      "content_sha256": "7429f37a95b65f436613080b7e9011da31ef8d193f16e2ecf7147588e166f33f",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-internal-portfolio",
+      "artifact": "demo/sample-input/internal-portfolio.json",
+      "content_sha256": "a1468b13b63ad1b51807e8a79c3485d5453585abea59c1e4cc465c82701f367f",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-internal-policy",
+      "artifact": "demo/sample-input/internal-policy.json",
+      "content_sha256": "e2b16a8471a2bd08be5f056e173cd52fe7b223e717da69fb08aa5e307bb6a7ca",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-internal-thesis",
+      "artifact": "demo/sample-input/internal-thesis.json",
+      "content_sha256": "a68e8eea61c829fcbcbdf049b0479f70402bcb5513ebce8b2c9e09ee519cc002",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-lessons",
+      "artifact": "demo/sample-input/lessons.json",
+      "content_sha256": "7d3e32f9320060bf67d1c71b1e8606e47bff4d9978972171ce6488d1d3553ff7",
+      "classification": "synthetic-illustrative"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim-revenue",
+      "source_id": "src-ir-acx-q2",
+      "status": "reported_fact",
+      "text": "Q2 revenue was $4.8 billion, up 18% year over year.",
+      "evidence": "Revenue: $4.8B; year-over-year growth: 18%.",
+      "integrity": "trusted",
+      "confidentiality": "public"
+    },
+    {
+      "claim_id": "claim-guidance",
+      "source_id": "src-ir-acx-q2",
+      "status": "management_guidance",
+      "text": "Management guided Q3 revenue to a range of $5.0 billion to $5.2 billion.",
+      "evidence": "Q3 revenue outlook: $5.0B-$5.2B.",
+      "integrity": "trusted",
+      "confidentiality": "public"
+    },
+    {
+      "claim_id": "claim-demand",
+      "source_id": "src-ir-acx-q2",
+      "status": "management_commentary",
+      "text": "Management cited hyperscaler accelerator demand as a growth driver.",
+      "evidence": "Demand from hyperscale customers remained the principal growth driver.",
+      "integrity": "trusted",
+      "confidentiality": "public"
+    },
+    {
+      "claim_id": "claim-margin-risk",
+      "source_id": "src-filing-acx-q2",
+      "status": "risk_disclosure",
+      "text": "Advanced-packaging capacity remained a constraint on gross-margin expansion.",
+      "evidence": "Advanced-packaging supply may constrain shipment mix and gross margin.",
+      "integrity": "trusted",
+      "confidentiality": "public"
+    },
+    {
+      "claim_id": "claim-causal-rumor",
+      "source_id": "src-news-acx",
+      "status": "external_commentary",
+      "text": "Commentators attributed the share move entirely to an unannounced customer win.",
+      "evidence": "Traders speculated that an unannounced customer win explained the move.",
+      "integrity": "untrusted",
+      "confidentiality": "public"
+    },
+    {
+      "claim_id": "claim-thesis-demand",
+      "source_id": "src-internal-thesis",
+      "status": "prior_assumption",
+      "text": "Accelerator demand should remain the principal revenue-growth driver through 2026.",
+      "evidence": "Approved internal thesis, July 2026.",
+      "integrity": "trusted",
+      "confidentiality": "internal"
+    },
+    {
+      "claim_id": "claim-thesis-margin",
+      "source_id": "src-internal-thesis",
+      "status": "prior_assumption",
+      "text": "Packaging constraints may delay gross-margin expansion.",
+      "evidence": "Approved internal risk assumption, July 2026.",
+      "integrity": "trusted",
+      "confidentiality": "internal"
+    }
+  ],
+  "lesson_candidates": []
+}

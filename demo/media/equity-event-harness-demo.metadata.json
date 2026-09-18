@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-08-24T18:32:41+00:00",
+  "provider": "Microsoft Foundry",
+  "model": "gpt-4o-mini-tts",
+  "deployment": "gpt-4o-mini-tts",
+  "endpoint": "https://eastus2oai.cognitiveservices.azure.com/openai/v1/audio/speech",
+  "voice": "onyx",
+  "storyboard": "demo/recording/storyboard.json",
+  "storyboard_sha256": "f9c0fca0439533506790edb01f086f0216a51915eb5b2e8485a5640a53a5fed1",
+  "segments": [
+    {
+      "id": "intro",
+      "duration_seconds": 13.4,
+      "audio_sha256": "bd40471b52ba8f04a24c1c2abf9039d80b8caf64733d8bcfb84a3a43bf8c7ffb",
+      "request_fingerprint": "9ac4af81f98f172bea5b6df1734bc3597876d7503d1e805aafefe475f9b2de57"
+    },
+    {
+      "id": "baseline",
+      "duration_seconds": 28.45,
+      "audio_sha256": "12326b0cd7b52cd90fe0be0ba9a513151c7584efcecbbe49acead4d7234b1214",
+      "request_fingerprint": "22f4f50db2609c0501632acd66f10d97af9d6299f5bba0ebb961a8f369ce29e8"
+    },
+    {
+      "id": "controlled-runtime",
+      "duration_seconds": 48.9,
+      "audio_sha256": "3bd58eb360ca8ee5cba192aa991101ba3492f4713c6c39db8f71d14695076c0b",
+      "request_fingerprint": "c55cd5dfe228e1d432edd53c99d37e015c19226791ab98e09dc4e03f48674787"
+    },
+    {
+      "id": "verify-and-repair",
+      "duration_seconds": 35.1,
+      "audio_sha256": "ecbc6003fce7096914a90f50f0906181f9721bc7dcab07db3dc4f40730ab8e42",
+      "request_fingerprint": "042745e2414f9228fc4a873b3c74e233e018d4abb169019906c49a837460dc1e"
+    },
+    {
+      "id": "approval-and-proof",
+      "duration_seconds": 38.6,
+      "audio_sha256": "da84c0ab68ceb70fa0b3aa1c332291a53ac526343715c9b794321165d2737315",
+      "request_fingerprint": "4670c32faca0f8ea7be7507e12396cd5ded9576cf4776adf5357b6ae58535eee"
+    }
+  ],
+  "duration_seconds": 164.45,
+  "video_sha256": "76ba3286044f0893c96369fd33f506ac60bda23c9a0d424a6b1a6beddd20de15",
+  "cover_sha256": "b6ff4c3901ce4bc4f01340dd2ff30aeb67b2399194a30adb98ef1b814385eb1e",
+  "resolution": "1920x1080",
+  "synthetic_data_notice": true
+}

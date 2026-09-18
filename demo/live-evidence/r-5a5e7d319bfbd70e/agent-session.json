@@ -1,0 +1,14 @@
+{
+  "type": "session",
+  "session_id": "70fac78a-34fc-4cc1-a05a-cdf7951be8b1",
+  "service_session_id": null,
+  "state": {
+    "todo": {},
+    "agent_mode": {
+      "current_mode": "plan"
+    },
+    "agent_skills": {},
+    "live-runtime": {},
+    "file_memory": {}
+  }
+}

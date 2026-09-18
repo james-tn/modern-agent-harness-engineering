@@ -1,0 +1,8 @@
+# Framework core and its Azure OpenAI provider (versions ship independently).
+agent-framework-core==1.18.0
+agent-framework-openai==1.14.3
+azure-identity==1.25.3
+opentelemetry-sdk==1.44.0
+
+# Testing only.
+pytest>=8.0

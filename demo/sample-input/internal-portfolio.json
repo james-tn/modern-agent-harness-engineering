@@ -1,0 +1,22 @@
+{
+  "data_classification": "synthetic-illustrative",
+  "source_id": "src-internal-portfolio",
+  "api": "mock://portfolio/v1/exposure",
+  "as_of": "2026-08-05",
+  "portfolio_id": "mock-growth-01",
+  "positions": [
+    {
+      "ticker": "ACX",
+      "weight_pct": 3.2,
+      "exposure_band": "medium (2%-5%)",
+      "shares": 125000,
+      "cost_basis": 78.40,
+      "confidentiality": {
+        "exposure_band": "internal",
+        "weight_pct": "internal_only",
+        "shares": "internal_only",
+        "cost_basis": "internal_only"
+      }
+    }
+  ]
+}

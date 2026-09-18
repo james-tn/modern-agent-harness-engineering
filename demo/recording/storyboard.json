@@ -1,0 +1,48 @@
+{
+  "title": "Equity Event Impact Analyst - narrated harness demo",
+  "voice": "onyx",
+  "instructions": "Professional internal technical presenter. Calm, credible, precise, and moderately paced. Emphasize control gates and verifier outcomes without sounding promotional.",
+  "segments": [
+    {
+      "id": "intro",
+      "visual": {
+        "type": "title"
+      },
+      "narration": "This demo uses the same deterministic Agent Framework client in both runs. The difference is the runtime around it. Watch the harness turn a synthetic equity-event request into a controlled, evidence-backed episode."
+    },
+    {
+      "id": "baseline",
+      "visual": {
+        "type": "baseline"
+      },
+      "narration": "Run A is context engineered but not governed. It sees every skill and source, produces executable Python, and renders a polished briefing. Yet fluency hides four defects. The after-close release is analyzed on the wrong trading date. The result is a raw return rather than the approved benchmark-adjusted measure. Unsupported causality is repeated, and exact mock portfolio fields cross the reporting boundary. The model declares completion, but nothing independently proves the work."
+    },
+    {
+      "id": "controlled-runtime",
+      "visual": {
+        "type": "events",
+        "from": 1,
+        "to": 12
+      },
+      "narration": "Run B freezes a five-task plan before analytical side effects. Just-in-time selection loads eight relevant skill workflows and defers three unrelated capabilities. Retrieval records one public snapshot and four mock internal API operations in a typed evidence ledger. Governance applies integrity and confidentiality labels before synthesis, excludes untrusted causal commentary, strips exact exposure fields, and requires approval. The model generates standard-library Python under a constrained artifact contract. The runtime executes it in isolated mode, with a curated environment and a timeout. Each roadmap card shows the harness technique, the domain asset controlling the step, its validation contract, and the evidence produced."
+    },
+    {
+      "id": "verify-and-repair",
+      "visual": {
+        "type": "events",
+        "from": 13,
+        "to": 20
+      },
+      "narration": "Now the model proposes completion, but the harness decides. The first verifier pass independently recomputes returns and checks evidence identifiers, report sections, restricted data, causal language, chart data, and the event-date rule. Eight checks pass. Event-date alignment fails because an after-close announcement must map to the next trading day. The bounded loop returns that concrete failure, regenerates only the affected analysis, executes again, and reruns all nine checks. The second pass succeeds."
+    },
+    {
+      "id": "approval-and-proof",
+      "visual": {
+        "type": "events-and-dashboard",
+        "from": 21,
+        "to": 24
+      },
+      "narration": "Only after nine of nine checks pass does the approval gate open. A reviewer receipt is recorded, then certification hashes the sources, policy, code, analysis JSON, and HTML, and binds them to the trace. The final dashboard reports the synthetic August sixth event date and a five point nine one percent abnormal return. The roadmap is therefore both progress visualization and executable control evidence. This is harness engineering: consistent behavior across runs, with proof. All data is fictional and this is not investment advice."
+    }
+  ]
+}

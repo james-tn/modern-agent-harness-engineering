@@ -1,0 +1,120 @@
+{
+  "certificate_type": "equity-event-completion-certificate",
+  "event_id": "acx-2026-q2-earnings",
+  "trace_id": "4033a15ace7384723a22f98eda1b44de",
+  "source_snapshots": [
+    {
+      "source_id": "src-public-bundle",
+      "artifact": "demo/sample-input/public-sources.json",
+      "content_sha256": "4b898a971c262b5a1bb9c34a2e4a1558af73a1bc2d3255ab75dcd1f58c402e3f",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-market-snapshot",
+      "artifact": "demo/sample-input/market-prices.json",
+      "content_sha256": "7429f37a95b65f436613080b7e9011da31ef8d193f16e2ecf7147588e166f33f",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-internal-portfolio",
+      "artifact": "demo/sample-input/internal-portfolio.json",
+      "content_sha256": "a1468b13b63ad1b51807e8a79c3485d5453585abea59c1e4cc465c82701f367f",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-internal-policy",
+      "artifact": "demo/sample-input/internal-policy.json",
+      "content_sha256": "e2b16a8471a2bd08be5f056e173cd52fe7b223e717da69fb08aa5e307bb6a7ca",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-internal-thesis",
+      "artifact": "demo/sample-input/internal-thesis.json",
+      "content_sha256": "a68e8eea61c829fcbcbdf049b0479f70402bcb5513ebce8b2c9e09ee519cc002",
+      "classification": "synthetic-illustrative"
+    },
+    {
+      "source_id": "src-lessons",
+      "artifact": "demo/sample-input/lessons.json",
+      "content_sha256": "7d3e32f9320060bf67d1c71b1e8606e47bff4d9978972171ce6488d1d3553ff7",
+      "classification": "synthetic-illustrative"
+    }
+  ],
+  "policy": {
+    "policy_id": "equity-event-research-standard",
+    "version": "3.2.0",
+    "decision": "allow_after_approval"
+  },
+  "verifier": {
+    "verifier_version": "equity-verifier/1.1",
+    "passed": true,
+    "checks": [
+      {
+        "code": "script_execution",
+        "passed": true,
+        "detail": "Generated Python exited successfully and produced JSON plus HTML.",
+        "category": "Execution"
+      },
+      {
+        "code": "independent_recalculation",
+        "passed": true,
+        "detail": "Security, benchmark, and abnormal returns match an independent recomputation.",
+        "category": "Verification"
+      },
+      {
+        "code": "approved_method",
+        "passed": true,
+        "detail": "Adjusted prices and the approved benchmark are required.",
+        "category": "Governance"
+      },
+      {
+        "code": "claim_provenance",
+        "passed": true,
+        "detail": "Evidence IDs present: ['src-filing-acx-q2', 'src-internal-policy', 'src-internal-thesis', 'src-ir-acx-q2', 'src-market-snapshot']",
+        "category": "Observability"
+      },
+      {
+        "code": "required_sections",
+        "passed": true,
+        "detail": "Required sections present: ['event_summary', 'market_reaction', 'portfolio_exposure', 'risks_and_uncertainties', 'sources_and_methods', 'thesis_update']",
+        "category": "Lifecycle"
+      },
+      {
+        "code": "restricted_data_excluded",
+        "passed": true,
+        "detail": "No internal-only position fields reached the shared briefing.",
+        "category": "Governance"
+      },
+      {
+        "code": "causal_claim_guard",
+        "passed": true,
+        "detail": "Untrusted causal commentary was excluded and uncertainty preserved.",
+        "category": "Governance"
+      },
+      {
+        "code": "chart_data_integrity",
+        "passed": true,
+        "detail": "Inline SVG chart data matches machine-readable analysis values.",
+        "category": "Verification"
+      },
+      {
+        "code": "event_date_alignment",
+        "passed": true,
+        "detail": "After-close event must map to 2026-08-06; analysis used 2026-08-06.",
+        "category": "Verification"
+      }
+    ]
+  },
+  "approval_receipt": "approval-4369681dc5f58bc6",
+  "artifacts": {
+    "analysis_sha256": "13a6e725a1321404b684d181e871c8a8525d15b039c6aec848c6879689078877",
+    "dashboard_sha256": "6000b064c81f524a2b23e00ba0d694021788a2b8babd515c16e7a8fa7678c10c",
+    "generated_script_sha256": "9460bb4feefb2fe7a3d7daa9e7948d12e3a9f8db145a9ab4da4c99912e926751"
+  },
+  "execution": {
+    "model": "live",
+    "deployment": "gpt-5.6-terra",
+    "approval_kind": "automated-ui-validation-not-human",
+    "code_boundary": "validated-arithmetic-template"
+  }
+}

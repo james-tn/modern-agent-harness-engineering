@@ -1,0 +1,19 @@
+{
+  "data_classification": "synthetic-illustrative",
+  "source_id": "src-market-snapshot",
+  "locator": "synthetic://market/adjusted-close/acx-chip",
+  "currency": "USD",
+  "adjusted": true,
+  "ticker": "ACX",
+  "benchmark": "CHIP",
+  "rows": [
+    {"date": "2026-08-03", "ACX": 100.00, "CHIP": 100.00},
+    {"date": "2026-08-04", "ACX": 102.00, "CHIP": 101.00},
+    {"date": "2026-08-05", "ACX": 101.00, "CHIP": 100.00},
+    {"date": "2026-08-06", "ACX": 110.00, "CHIP": 103.00},
+    {"date": "2026-08-07", "ACX": 112.00, "CHIP": 104.00},
+    {"date": "2026-08-10", "ACX": 109.00, "CHIP": 103.50},
+    {"date": "2026-08-11", "ACX": 111.00, "CHIP": 104.20},
+    {"date": "2026-08-12", "ACX": 113.00, "CHIP": 105.00}
+  ]
+}

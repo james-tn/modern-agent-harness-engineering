@@ -1,0 +1,528 @@
+{
+  "run": {
+    "idempotency_key": "r-34c80beda5b222d1",
+    "status": "published",
+    "trace_id": "a6befe8a38c49fb6bd53e3ccf03469fa",
+    "retry_count": 0
+  },
+  "plan": [
+    "Retrieve and classify the synthetic public event evidence and announcement details.",
+    "Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.",
+    "Determine the effective trading event date using the approved timestamp and trading-calendar rules.",
+    "Execute the approved adjusted-price benchmark-relative abnormal-return calculation.",
+    "Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate."
+  ],
+  "todos": [
+    {
+      "task": "Retrieve and classify the synthetic public event evidence and announcement details.",
+      "status": "done"
+    },
+    {
+      "task": "Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.",
+      "status": "done"
+    },
+    {
+      "task": "Determine the effective trading event date using the approved timestamp and trading-calendar rules.",
+      "status": "done"
+    },
+    {
+      "task": "Execute the approved adjusted-price benchmark-relative abnormal-return calculation.",
+      "status": "done"
+    },
+    {
+      "task": "Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.",
+      "status": "done"
+    }
+  ],
+  "selected_skills": [],
+  "verifier_version": "",
+  "approval_receipt": "approval-5a86b6fba7785be9",
+  "lesson_candidates": [],
+  "events": [
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "episode_started",
+      "model": "live",
+      "deployment": "gpt-5.6-terra",
+      "config": {
+        "model": "live",
+        "deployment": "gpt-5.6-terra",
+        "skill_mode": "all_loaded",
+        "available_skills": [
+          "abnormal-return-model",
+          "corporate-actions-monitor",
+          "credit-event-analysis",
+          "equity-event-analysis",
+          "event-date-alignment",
+          "evidence-verification",
+          "financial-source-retrieval",
+          "interactive-briefing",
+          "options-surface-analysis",
+          "portfolio-impact",
+          "research-policy"
+        ],
+        "enabled_tools": [
+          "public_source_search",
+          "internal_api_lookup",
+          "execute_analysis"
+        ],
+        "memory_enabled": false,
+        "memory_scope": "techhub-analyst",
+        "max_model_requests": 40,
+        "max_tool_calls": 60,
+        "max_execution_attempts": 3,
+        "execution_timeout_seconds": 15,
+        "gate_mode": "observe"
+      }
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "policy_admission",
+      "decision": {
+        "policy_id": "equity-event-research-standard",
+        "version": "3.2.0",
+        "sink": "shared-research-briefing",
+        "decision": "allow_after_approval",
+        "approval_required": true,
+        "admitted_claim_ids": [
+          "claim-revenue",
+          "claim-guidance",
+          "claim-demand",
+          "claim-margin-risk",
+          "claim-thesis-demand",
+          "claim-thesis-margin"
+        ],
+        "excluded_claim_ids": [
+          "claim-causal-rumor"
+        ],
+        "forbidden_output_fields": [
+          "shares",
+          "cost_basis",
+          "weight_pct"
+        ],
+        "reasons": [
+          "claim-causal-rumor: untrusted commentary cannot drive the shared briefing."
+        ]
+      },
+      "never_deferred": true
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "session_started",
+      "session_id": "466f57aa-aa77-4a95-8563-d73c65e28dd2",
+      "history": "same_session_for_both_turns"
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "conversation_turn_started",
+      "phase": "plan",
+      "session_id": "466f57aa-aa77-4a95-8563-d73c65e28dd2"
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_catalog_discovered",
+      "skills": [
+        {
+          "name": "abnormal-return-model",
+          "description": "Compute adjusted security, benchmark, abnormal, and cumulative abnormal returns using the approved method."
+        },
+        {
+          "name": "corporate-actions-monitor",
+          "description": "Track dividends, splits, mergers, tender offers, and other corporate actions."
+        },
+        {
+          "name": "credit-event-analysis",
+          "description": "Analyze bond spreads, ratings, covenants, and credit-event impact."
+        },
+        {
+          "name": "equity-event-analysis",
+          "description": "Orchestrate the approved equity-event research process from planning through evidence-backed briefing."
+        },
+        {
+          "name": "event-date-alignment",
+          "description": "Map announcement timestamps to the correct trading event date and prevent look-ahead bias."
+        },
+        {
+          "name": "evidence-verification",
+          "description": "Verify event-date alignment, calculations, provenance, policy compliance, chart integrity, and bounded completion."
+        },
+        {
+          "name": "financial-source-retrieval",
+          "description": "Retrieve and classify primary filings, investor-relations material, market data, and secondary commentary."
+        },
+        {
+          "name": "interactive-briefing",
+          "description": "Produce an accessible HTML and SVG equity-event briefing from verified machine-readable results."
+        },
+        {
+          "name": "options-surface-analysis",
+          "description": "Analyze implied-volatility surfaces, skew, term structure, and options Greeks."
+        },
+        {
+          "name": "portfolio-impact",
+          "description": "Relate an event to mock internal exposure while enforcing field-level confidentiality."
+        },
+        {
+          "name": "research-policy",
+          "description": "Enforce the mock internal research standard, source hierarchy, redaction, and approval requirements."
+        }
+      ],
+      "content_level": "names_and_purposes"
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "abnormal-return-model",
+      "phase": "before_model",
+      "bytes": 637
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "corporate-actions-monitor",
+      "phase": "before_model",
+      "bytes": 359
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "credit-event-analysis",
+      "phase": "before_model",
+      "bytes": 346
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "equity-event-analysis",
+      "phase": "before_model",
+      "bytes": 877
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "event-date-alignment",
+      "phase": "before_model",
+      "bytes": 618
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "evidence-verification",
+      "phase": "before_model",
+      "bytes": 592
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "financial-source-retrieval",
+      "phase": "before_model",
+      "bytes": 579
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "interactive-briefing",
+      "phase": "before_model",
+      "bytes": 607
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "options-surface-analysis",
+      "phase": "before_model",
+      "bytes": 367
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "portfolio-impact",
+      "phase": "before_model",
+      "bytes": 433
+    },
+    {
+      "at": "2026-09-17T21:42:16Z",
+      "event": "skill_preloaded",
+      "skill": "research-policy",
+      "phase": "before_model",
+      "bytes": 595
+    },
+    {
+      "at": "2026-09-17T21:42:27Z",
+      "event": "plan_recorded",
+      "tasks": [
+        "Retrieve and classify the synthetic public event evidence and announcement details.",
+        "Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.",
+        "Determine the effective trading event date using the approved timestamp and trading-calendar rules.",
+        "Execute the approved adjusted-price benchmark-relative abnormal-return calculation.",
+        "Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate."
+      ]
+    },
+    {
+      "at": "2026-09-17T21:42:29Z",
+      "event": "conversation_turn_finished",
+      "phase": "plan",
+      "continuation": 0,
+      "text": "I\u2019ll create and persist a five-step research plan only; memory is disabled in this runtime, so there is no file memory to inspect.The plan-record call rejected title-cased parameter names. I\u2019ll correct the parameter keys and make no further research calls.Plan recorded with five concrete tasks. File memory is disabled, so no memory file was available to recall. I will stop here pending an EXECUTE instruction."
+    },
+    {
+      "at": "2026-09-17T21:42:29Z",
+      "event": "conversation_turn_started",
+      "phase": "execute",
+      "session_id": "466f57aa-aa77-4a95-8563-d73c65e28dd2"
+    },
+    {
+      "at": "2026-09-17T21:43:04Z",
+      "event": "episode_state_read",
+      "phase": "execute",
+      "plan": [
+        "Retrieve and classify the synthetic public event evidence and announcement details.",
+        "Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.",
+        "Determine the effective trading event date using the approved timestamp and trading-calendar rules.",
+        "Execute the approved adjusted-price benchmark-relative abnormal-return calculation.",
+        "Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate."
+      ]
+    },
+    {
+      "at": "2026-09-17T21:43:06Z",
+      "event": "sources_retrieved",
+      "adapter": "public-snapshot",
+      "operations": [
+        {
+          "adapter": "public-research",
+          "operation": "search_event",
+          "query": "ACX synthetic quarterly earnings event announcement investor relations adjusted prices benchmark",
+          "mode": "recorded-primary-source-snapshot",
+          "result_source_ids": [
+            "src-ir-acx-q2",
+            "src-filing-acx-q2",
+            "src-news-acx",
+            "src-market-snapshot"
+          ]
+        }
+      ]
+    },
+    {
+      "at": "2026-09-17T21:43:06Z",
+      "event": "skill_used",
+      "skill": "financial-source-retrieval",
+      "tool": "public_source_search",
+      "call_id": "call_r4CIGEtgPiohTrHduV3GyqYm"
+    },
+    {
+      "at": "2026-09-17T21:43:08Z",
+      "event": "sources_retrieved",
+      "adapter": "mock-internal-api",
+      "operations": [
+        {
+          "adapter": "mock-internal-api",
+          "operation": "GET",
+          "endpoint": "mock://research-policy/v3/equity-event",
+          "source_id": "src-internal-policy",
+          "classification": "synthetic-illustrative"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-17T21:43:08Z",
+      "event": "skill_used",
+      "skill": "financial-source-retrieval",
+      "tool": "internal_api_lookup",
+      "call_id": "call_4aRdep9ra2KDCiJdHCpBHU0z"
+    },
+    {
+      "at": "2026-09-17T21:43:09Z",
+      "event": "sources_retrieved",
+      "adapter": "mock-internal-api",
+      "operations": [
+        {
+          "adapter": "mock-internal-api",
+          "operation": "GET",
+          "endpoint": "mock://portfolio/v1/exposure",
+          "source_id": "src-internal-portfolio",
+          "classification": "synthetic-illustrative"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-17T21:43:09Z",
+      "event": "skill_used",
+      "skill": "financial-source-retrieval",
+      "tool": "internal_api_lookup",
+      "call_id": "call_YNtkWvRyWvgPITkFgydsmhST"
+    },
+    {
+      "at": "2026-09-17T21:43:11Z",
+      "event": "sources_retrieved",
+      "adapter": "mock-internal-api",
+      "operations": [
+        {
+          "adapter": "mock-internal-api",
+          "operation": "GET",
+          "endpoint": "mock://research/v1/thesis/ACX",
+          "source_id": "src-internal-thesis",
+          "classification": "synthetic-illustrative"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-17T21:43:11Z",
+      "event": "skill_used",
+      "skill": "financial-source-retrieval",
+      "tool": "internal_api_lookup",
+      "call_id": "call_VMocMqVDTqA6xymz7sBx2SmC"
+    },
+    {
+      "at": "2026-09-17T21:43:13Z",
+      "event": "sources_retrieved",
+      "adapter": "mock-internal-api",
+      "operations": [
+        {
+          "adapter": "mock-internal-api",
+          "operation": "GET",
+          "endpoint": "mock://research/v1/lessons",
+          "source_id": "src-lessons",
+          "classification": "synthetic-illustrative"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-17T21:43:13Z",
+      "event": "skill_used",
+      "skill": "financial-source-retrieval",
+      "tool": "internal_api_lookup",
+      "call_id": "call_MQkl5y2f12DLJ5SHG0X7GsVe"
+    },
+    {
+      "at": "2026-09-17T21:43:16Z",
+      "event": "analysis_proposed",
+      "attempt": 1,
+      "event_date": "2026-08-06",
+      "return_expression": "security_return - benchmark_return"
+    },
+    {
+      "at": "2026-09-17T21:43:16Z",
+      "event": "analysis_executed",
+      "attempt": 1,
+      "result": {
+        "success": true,
+        "return_code": 0,
+        "stdout": "{\"analysis\": \"C:\\\\testing-misc\\\\modern-agent-harness\\\\demo\\\\live-evidence\\\\r-34c80beda5b222d1\\\\attempt-01\\\\analysis.json\", \"dashboard\": \"C:\\\\testing-misc\\\\modern-agent-harness\\\\demo\\\\live-evidence\\\\r-34c80beda5b222d1\\\\attempt-01\\\\dashboard.html\"}",
+        "stderr": "",
+        "script": "generated_analysis.py",
+        "analysis": "analysis.json",
+        "dashboard": "dashboard.html"
+      }
+    },
+    {
+      "at": "2026-09-17T21:43:16Z",
+      "event": "skill_used",
+      "skill": "abnormal-return-model",
+      "tool": "execute_analysis",
+      "call_id": "call_MB5frHsJGXWvPClVt4EOFDGM"
+    },
+    {
+      "at": "2026-09-17T21:43:17Z",
+      "event": "skill_used",
+      "skill": "event-date-alignment",
+      "tool": "execute_analysis",
+      "call_id": "call_MB5frHsJGXWvPClVt4EOFDGM"
+    },
+    {
+      "at": "2026-09-17T21:43:17Z",
+      "event": "skill_used",
+      "skill": "interactive-briefing",
+      "tool": "execute_analysis",
+      "call_id": "call_MB5frHsJGXWvPClVt4EOFDGM"
+    },
+    {
+      "at": "2026-09-17T21:43:21Z",
+      "event": "acceptance_evaluated",
+      "attempt": 1,
+      "gate_mode": "observe",
+      "report": {
+        "verifier_version": "equity-verifier/1.1",
+        "passed": true,
+        "checks": [
+          {
+            "code": "script_execution",
+            "passed": true,
+            "detail": "Generated Python exited successfully and produced JSON plus HTML.",
+            "category": "Execution"
+          },
+          {
+            "code": "independent_recalculation",
+            "passed": true,
+            "detail": "Security, benchmark, and abnormal returns match an independent recomputation.",
+            "category": "Verification"
+          },
+          {
+            "code": "approved_method",
+            "passed": true,
+            "detail": "Adjusted prices and the approved benchmark are required.",
+            "category": "Governance"
+          },
+          {
+            "code": "claim_provenance",
+            "passed": true,
+            "detail": "Evidence IDs present: ['src-filing-acx-q2', 'src-internal-policy', 'src-internal-thesis', 'src-ir-acx-q2', 'src-market-snapshot']",
+            "category": "Observability"
+          },
+          {
+            "code": "required_sections",
+            "passed": true,
+            "detail": "Required sections present: ['event_summary', 'market_reaction', 'portfolio_exposure', 'risks_and_uncertainties', 'sources_and_methods', 'thesis_update']",
+            "category": "Lifecycle"
+          },
+          {
+            "code": "restricted_data_excluded",
+            "passed": true,
+            "detail": "No internal-only position fields reached the shared briefing.",
+            "category": "Governance"
+          },
+          {
+            "code": "causal_claim_guard",
+            "passed": true,
+            "detail": "Untrusted causal commentary was excluded and uncertainty preserved.",
+            "category": "Governance"
+          },
+          {
+            "code": "chart_data_integrity",
+            "passed": true,
+            "detail": "Inline SVG chart data matches machine-readable analysis values.",
+            "category": "Verification"
+          },
+          {
+            "code": "event_date_alignment",
+            "passed": true,
+            "detail": "After-close event must map to 2026-08-06; analysis used 2026-08-06.",
+            "category": "Verification"
+          }
+        ]
+      }
+    },
+    {
+      "at": "2026-09-17T21:43:23Z",
+      "event": "approval_requested",
+      "dashboard": "attempt-01\\dashboard.html"
+    },
+    {
+      "at": "2026-09-17T21:43:41Z",
+      "event": "approval_recorded",
+      "reviewer": "automated-ui-validation",
+      "kind": "automated-ui-validation-not-human",
+      "receipt": "approval-5a86b6fba7785be9"
+    },
+    {
+      "at": "2026-09-17T21:43:46Z",
+      "event": "completion_admitted",
+      "certificate": "evidence-certificate.json"
+    },
+    {
+      "at": "2026-09-17T21:43:51Z",
+      "event": "conversation_turn_finished",
+      "phase": "execute",
+      "continuation": 0,
+      "text": "I\u2019ll resume the recorded plan, first confirming its durable state. I\u2019ll then retrieve the required synthetic public and internal evidence, apply the date and return methodology, and submit only a verified result for review.The snapshot identifies an after-close earnings release on 5 August 2026, making the next trading day the policy-directed event date. The approved benchmark is CHIP, prices are adjusted, and shared output may include only the medium exposure band\u2014not exact position fields. I\u2019ll now retrieve the remaining lesson context, calculate the event-day benchmark-adjusted return, and verify the artifact.The approved calculation executed successfully for 6 August 2026. Based on the adjusted closes, ACX returned 8.91%, CHIP returned 3.00%, and the arithmetic difference is a 5.91 percentage-point abnormal return; this describes relative price movement and is not causal proof. I\u2019ll now run the independent verifier before seeking review.All verification checks passed, including adjusted-price methodology, date alignment, restricted-field exclusion, provenance, and chart-data integrity. Reviewer approval was granted; because runtime memory is disabled, no episode-memory file can be written. I\u2019ll now formally complete the approved episode.## Certified synthetic ACX event analysis\n\n- **Event:** Asteria Compute Systems (ACX) Q2 earnings  \n- **Announcement:** 2026-08-05, 16:15 ET \u2014 after market close  \n- **Effective trading date:** **2026-08-06**, per the after-close \u2192 next-trading-day rule  \n- **Data:** Synthetic illustrative, adjusted close prices  \n- **Benchmark:** CHIP  \n\n### Market reaction on 2026-08-06\n- **ACX return:** **+8.91%**\n- **CHIP return:** **+3.00%**\n- **Abnormal return (ACX \u2212 CHIP):** **+5.91 percentage points**\n\nThis is a benchmark-relative price observation, not proof that any particular disclosure caused the move.\n\n### Reported event context\n- Q2 revenue: **$4.8B**, up **18% YoY** (`src-ir-acx-q2`)\n- Q3 revenue outlook: **$5.0B\u2013$5.2B** (`src-ir-acx-q2`)\n- Management described hyperscaler accelerator demand as a growth driver (`src-ir-acx-q2`)\n- Advanced-packaging capacity remained a disclosed constraint on gross-margin expansion (`src-filing-acx-q2`)\n\n### Portfolio and thesis context\n- Approved shared exposure disclosure: **medium (2%\u20135%)**\n- Demand commentary is consistent with the prior internal demand assumption.\n- Packaging-capacity risk remains a challenge/risk signal for margin expansion.\n\n### Controls and completion\n- Used adjusted prices and the approved CHIP benchmark.\n- Independent verification passed: calculation, effective date, evidence provenance, required briefing sections, restricted-data exclusion, and chart-data integrity.\n- Reviewer approval received: `approval-5a86b6fba7785be9`.\n- Episode formally completed and certified. Memory persistence was not applicable because memory is disabled.\n\n*This is a synthetic research-process demonstration, not investment advice.*"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "certified": true,
+  "trace_id": "a6befe8a38c49fb6bd53e3ccf03469fa",
+  "model": "live",
+  "deployment": "gpt-5.6-terra",
+  "attempts": 1,
+  "dashboard": "dashboard.html",
+  "certificate": "evidence-certificate.json",
+  "memory_recalled_from": null
+}

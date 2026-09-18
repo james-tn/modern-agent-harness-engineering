@@ -1,0 +1,111 @@
+{
+  "id": "r-34c80beda5b222d1",
+  "status": "completed",
+  "created_at": "2026-09-17T21:42:16.494+00:00",
+  "updated_at": "2026-09-17T21:43:52.030+00:00",
+  "config": {
+    "model": "live",
+    "deployment": "gpt-5.6-terra",
+    "skill_mode": "all_loaded",
+    "available_skills": [
+      "abnormal-return-model",
+      "corporate-actions-monitor",
+      "credit-event-analysis",
+      "equity-event-analysis",
+      "event-date-alignment",
+      "evidence-verification",
+      "financial-source-retrieval",
+      "interactive-briefing",
+      "options-surface-analysis",
+      "portfolio-impact",
+      "research-policy"
+    ],
+    "enabled_tools": [
+      "public_source_search",
+      "internal_api_lookup",
+      "execute_analysis"
+    ],
+    "memory_enabled": false,
+    "memory_scope": "techhub-analyst",
+    "max_model_requests": 40,
+    "max_tool_calls": 60,
+    "max_execution_attempts": 3,
+    "execution_timeout_seconds": 15,
+    "gate_mode": "observe"
+  },
+  "error": null,
+  "approval": {
+    "status": "approved",
+    "requested_at": "2026-09-17T21:43:23.151+00:00",
+    "report": {
+      "verifier_version": "equity-verifier/1.1",
+      "passed": true,
+      "checks": [
+        {
+          "code": "script_execution",
+          "passed": true,
+          "detail": "Generated Python exited successfully and produced JSON plus HTML.",
+          "category": "Execution"
+        },
+        {
+          "code": "independent_recalculation",
+          "passed": true,
+          "detail": "Security, benchmark, and abnormal returns match an independent recomputation.",
+          "category": "Verification"
+        },
+        {
+          "code": "approved_method",
+          "passed": true,
+          "detail": "Adjusted prices and the approved benchmark are required.",
+          "category": "Governance"
+        },
+        {
+          "code": "claim_provenance",
+          "passed": true,
+          "detail": "Evidence IDs present: ['src-filing-acx-q2', 'src-internal-policy', 'src-internal-thesis', 'src-ir-acx-q2', 'src-market-snapshot']",
+          "category": "Observability"
+        },
+        {
+          "code": "required_sections",
+          "passed": true,
+          "detail": "Required sections present: ['event_summary', 'market_reaction', 'portfolio_exposure', 'risks_and_uncertainties', 'sources_and_methods', 'thesis_update']",
+          "category": "Lifecycle"
+        },
+        {
+          "code": "restricted_data_excluded",
+          "passed": true,
+          "detail": "No internal-only position fields reached the shared briefing.",
+          "category": "Governance"
+        },
+        {
+          "code": "causal_claim_guard",
+          "passed": true,
+          "detail": "Untrusted causal commentary was excluded and uncertainty preserved.",
+          "category": "Governance"
+        },
+        {
+          "code": "chart_data_integrity",
+          "passed": true,
+          "detail": "Inline SVG chart data matches machine-readable analysis values.",
+          "category": "Verification"
+        },
+        {
+          "code": "event_date_alignment",
+          "passed": true,
+          "detail": "After-close event must map to 2026-08-06; analysis used 2026-08-06.",
+          "category": "Verification"
+        }
+      ]
+    },
+    "reviewer": "automated-ui-validation",
+    "dashboard_url": "/api/runs/r-34c80beda5b222d1/artifacts/dashboard",
+    "timeout_seconds": 600,
+    "decided_at": "2026-09-17T21:43:40.915+00:00"
+  },
+  "artifacts": {
+    "dashboard": {
+      "name": "dashboard.html",
+      "url": "/api/runs/r-34c80beda5b222d1/artifacts/dashboard"
+    }
+  }
+}

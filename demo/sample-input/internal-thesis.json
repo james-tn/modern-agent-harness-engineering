@@ -1,0 +1,22 @@
+{
+  "data_classification": "synthetic-illustrative",
+  "source_id": "src-internal-thesis",
+  "api": "mock://research/v1/thesis/ACX",
+  "ticker": "ACX",
+  "version": "2026.07",
+  "confidentiality": "internal",
+  "thesis": [
+    {
+      "claim_id": "claim-thesis-demand",
+      "status": "prior_assumption",
+      "text": "Accelerator demand should remain the principal revenue-growth driver through 2026.",
+      "evidence": "Approved internal thesis, July 2026."
+    },
+    {
+      "claim_id": "claim-thesis-margin",
+      "status": "prior_assumption",
+      "text": "Packaging constraints may delay gross-margin expansion.",
+      "evidence": "Approved internal risk assumption, July 2026."
+    }
+  ]
+}

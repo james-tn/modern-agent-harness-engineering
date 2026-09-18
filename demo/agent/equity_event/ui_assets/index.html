@@ -1,0 +1,764 @@
+<!doctype html>
+<!--
+THESIS: One operational surface makes the editable harness and its actual execution legible together, not a wall of JSON.
+OWN-WORLD: Inherit the existing midnight navy, cyan vectors, restrained borders and green/amber/red evidence states. System sans, projector-sized labels.
+STORY: Define a profile, run the real framework, follow one trace, inspect memory, then make an explicit human decision.
+FIRST VIEWPORT: A narrow definition workbench sits beside the wide observation canvas. Run is always in the header; current action leads the trace.
+FORM: Brief-pinned Operate split workbench, with tree and event stream sharing trace identity; no concept lottery or competing progress page.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="harness-nonce" content="__HARNESS_NONCE__">
+<title>Equity Event · Harness console</title>
+<style nonce="__HARNESS_NONCE__">
+:root {
+  color-scheme: dark;
+  --bg: #070b16; --panel: #101a2b; --raised: #14243a; --line: #344b69;
+  --text: #e7eef9; --muted: #b0c0d5; --cyan: #22d3ee; --blue: #70beff;
+  --green: #6be6a1; --amber: #ffd077; --red: #ff8e98; --radius: 8px;
+  font: 18px/1.5 "Segoe UI", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+button, input, select { font: inherit; }
+button, select, input:not([type=checkbox], [type=radio]) { min-height: 48px; }
+button, input, select { border: 1px solid var(--line); border-radius: 5px; }
+button { padding: 9px 16px; background: var(--raised); color: var(--text); cursor: pointer; font-weight: 600; }
+button:hover:not(:disabled) { background: #213b58; border-color: var(--blue); }
+button:active:not(:disabled) { background: #2a4765; }
+button:disabled, select:disabled { cursor: not-allowed; opacity: .55; }
+button.primary { background: var(--cyan); color: #07131f; border-color: var(--cyan); }
+button.primary:hover:not(:disabled) { background: #8eeafa; border-color: #8eeafa; }
+button.danger { color: var(--red); }
+input, select { background: #0b1423; color: var(--text); padding: 9px 12px; max-width: 100%; width: 100%; }
+input[type=checkbox], input[type=radio] { width: 22px; height: 22px; accent-color: var(--cyan); margin: 4px 0 0; flex-shrink: 0; }
+input::placeholder { color: var(--muted); }
+input:disabled { opacity: .7; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+a { color: var(--cyan); text-underline-offset: 4px; }
+p { margin: 8px 0 16px; max-width: 72ch; }
+h1 { margin: 0; font-size: 1.78rem; line-height: 1.2; font-weight: 650; }
+h2 { margin: 0; font-size: 1.34rem; line-height: 1.3; font-weight: 650; }
+h3 { margin: 0 0 10px; font-size: 1.12rem; font-weight: 650; }
+small, .small { font-size: .89rem; }
+code, pre { font-family: Consolas, "Courier New", monospace; font-size: .89rem; overflow-wrap: anywhere; }
+code { color: #c9e2f6; }
+pre { margin: 12px 0; padding: 16px; background: #0a1321; border: 1px solid var(--line); white-space: pre-wrap; max-height: 430px; overflow: auto; }
+[hidden] { display: none !important; }
+.muted { color: var(--muted); }
+.good { color: var(--green); }
+.warning { color: var(--amber); }
+.bad { color: var(--red); }
+.flex { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.between { justify-content: space-between; }
+.skip { position: fixed; top: -100px; left: 20px; z-index: 10; background: var(--panel); padding: 12px; }
+.skip:focus { top: 10px; }
+.topbar { padding: 23px 30px; border-bottom: 1px solid var(--line); display: flex; gap: 26px; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 5; background: var(--bg); }
+.identity { display: flex; align-items: center; gap: 16px; }
+.identity svg { width: 44px; height: 44px; color: var(--cyan); flex-shrink: 0; }
+.subtitle { color: var(--muted); margin-top: 6px; }
+.local { font-size: .89rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+.actions { justify-content: flex-end; }
+.actions button { min-width: 166px; }
+.mobile-nav { display: none; }
+.workspace { max-width: 1900px; padding: 26px 30px 42px; margin: 0 auto; display: grid; grid-template-columns: 360px minmax(0, 1fr); gap: 30px; align-items: start; }
+.definition { border-right: 1px solid var(--line); padding-right: 26px; }
+.section-head { margin-bottom: 18px; }
+.section-head p { margin-bottom: 0; }
+.presets { border: 0; padding: 0; margin: 0 0 20px; min-width: 0; }
+.presets legend { font-weight: 600; margin-bottom: 10px; }
+.preset { border-bottom: 1px solid var(--line); display: flex; gap: 12px; padding: 13px 0; cursor: pointer; }
+.preset strong { display: block; font-size: 1rem; }
+.preset small { color: var(--muted); display: block; margin-top: 4px; }
+.preset:has(input:checked) strong { color: var(--cyan); }
+.field { display: block; margin: 17px 0; }
+.field > span { display: block; font-weight: 600; margin-bottom: 7px; }
+.help { display: block; color: var(--muted); font-size: .89rem; margin: 7px 0 0; }
+.toggle { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; margin: 14px 0; }
+.toggle span { min-width: 0; }
+.toggle strong { font-weight: 600; }
+.toggle small { display: block; margin: 4px 0 0; color: var(--muted); }
+.definition details { padding: 5px 0 0; margin-top: 14px; }
+summary { cursor: pointer; font-weight: 600; }
+summary:hover { color: var(--cyan); }
+.definition details > summary { font-size: 1rem; }
+.tool-option { margin-top: 16px; }
+.concept-group { border-top: 1px solid var(--line); margin-top: 25px; padding-top: 23px; }
+.concept-group h3 { font-size: 1.12rem; line-height: 1.35; margin-bottom: 8px; }
+.concept-group > .why { margin: 0 0 12px; font-size: .89rem; color: var(--muted); }
+.concept-group .field > code { display: block; margin-top: 6px; color: var(--muted); }
+.fixed-facts { padding-left: 21px; margin: 15px 0 0; color: var(--muted); font-size: .89rem; }
+.fixed-facts li { margin-bottom: 11px; }
+.fixed-facts strong { color: var(--text); font-weight: 600; }
+.profile-contrast { margin: 0 0 18px; }
+.profile-contrast h3 { font-size: 1rem; margin-bottom: 8px; }
+.profile-contrast dl { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 6px 12px; margin: 0; font-size: .89rem; }
+.profile-contrast dt { color: var(--muted); }
+.profile-contrast dd { margin: 0; overflow-wrap: anywhere; }
+.notice { padding: 16px 18px; background: var(--raised); border: 1px solid var(--line); border-radius: var(--radius); margin: 18px 0; }
+.notice p:last-child { margin-bottom: 0; }
+.notice.error { color: var(--red); border-color: #915665; }
+.notice.warning { color: var(--amber); border-color: #77603b; }
+.notice button { margin-top: 10px; }
+.observe { min-width: 0; scroll-margin-top: 145px; }
+.observe-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.history { min-width: 205px; max-width: 300px; }
+.history label { display: block; margin-bottom: 6px; color: var(--muted); font-size: .89rem; }
+.status-band { padding: 23px 25px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.status-line { display: flex; gap: 12px; align-items: center; font-weight: 600; margin-bottom: 12px; }
+.status-line.running { color: var(--cyan); }
+.status-line.awaiting_approval { color: var(--amber); }
+.status-line.completed { color: var(--green); }
+.status-line.failed, .status-line.rejected { color: var(--red); }
+.status-line.interrupted { color: var(--amber); }
+.current-action { font-size: 1.56rem; line-height: 1.3; font-weight: 600; overflow-wrap: anywhere; }
+.run-description { color: var(--muted); margin-bottom: 0; }
+.trace-identity { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 17px; border-top: 1px solid var(--line); padding-top: 15px; }
+.trace-identity span { font-size: .89rem; color: var(--muted); }
+.trace-identity code { user-select: all; }
+.skill-stages { display: flex; gap: 0; flex-wrap: wrap; margin-top: 22px; }
+.skill-stage { flex: 1 1 150px; min-width: 0; padding: 0 20px 0 0; margin: 0 18px 13px 0; border-right: 1px solid var(--line); }
+.skill-stage:last-child { border-right: 0; padding-right: 0; margin-right: 0; }
+.skill-stage h3 { font-size: .89rem; color: var(--muted); font-weight: 400; margin-bottom: 7px; }
+.skill-stage strong { font-size: 1.12rem; font-weight: 600; }
+.stage-names { font-size: .89rem; color: var(--muted); overflow-wrap: anywhere; margin-top: 5px; }
+.evidence-section { margin-top: 28px; }
+.evidence-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
+.evidence-heading p { margin: 0; font-size: .89rem; color: var(--muted); }
+.trace-tree { padding: 8px 0; min-width: 0; max-height: 650px; overflow: auto; overscroll-behavior: contain; }
+.trace-node { margin-top: 9px; }
+.span-head { list-style: none; display: flex; gap: 10px; align-items: baseline; padding: 12px 0; flex-wrap: wrap; }
+.span-head::-webkit-details-marker { display: none; }
+.span-head::before { content: "›"; color: var(--muted); display: inline-block; width: 14px; font-size: 1.3rem; line-height: 1; }
+.trace-node[open] > .span-head::before { content: "⌄"; }
+.span-title { font-size: 1.12rem; overflow-wrap: anywhere; flex: 1 1 220px; }
+.origin { font-size: .89rem; font-weight: 400; color: var(--muted); border: 1px solid var(--line); padding: 1px 8px; border-radius: 4px; }
+.origin.maf { color: var(--cyan); }
+.span-duration { font-size: .89rem; font-weight: 400; font-variant-numeric: tabular-nums; color: var(--muted); }
+.span-status { font-size: .89rem; font-weight: 400; }
+.span-status.running { color: var(--cyan); }
+.span-status.interrupted, .span-status.unfinished { color: var(--amber); }
+.span-status.error { color: var(--red); }
+.span-status.ok { color: var(--green); }
+.span-body { margin-left: 22px; border-left: 1px solid var(--line); padding-left: 16px; }
+.span-body .inspect { font-size: .89rem; padding: 5px 0 10px; }
+.span-body .inspect summary { font-weight: 400; color: var(--muted); }
+.span-label { color: var(--muted); font-size: .89rem; margin: 0 0 9px; }
+.span-body .trace-node { margin-top: 0; }
+.trace-node:target > summary, .trace-node.highlight > summary { background: var(--raised); }
+.empty { padding: 26px 0; color: var(--muted); }
+.empty strong { font-size: 1.12rem; color: var(--text); font-weight: 600; display: block; margin-bottom: 8px; }
+.empty p { margin-bottom: 0; }
+.event-list { list-style: none; margin: 0; padding: 0; max-height: 680px; overflow: auto; overscroll-behavior: contain; }
+.event-row { border-bottom: 1px solid var(--line); padding: 17px 0; display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 16px; }
+.event-row time { color: var(--muted); font-size: .89rem; padding-top: 3px; font-variant-numeric: tabular-nums; }
+.event-title { font-size: 1.12rem; font-weight: 600; overflow-wrap: anywhere; }
+.event-detail { color: var(--muted); margin-top: 5px; font-size: .89rem; overflow-wrap: anywhere; }
+.event-row details { margin-top: 9px; font-size: .89rem; }
+.event-row details summary { color: var(--muted); font-weight: 400; }
+.link-button { background: none; border: none; min-height: 36px; padding: 3px 0; color: var(--cyan); font-size: .89rem; font-weight: 400; text-decoration: underline; text-underline-offset: 4px; }
+.link-button:hover:not(:disabled) { background: none; }
+.memory-list { padding: 0; margin: 0; list-style: none; }
+.memory-row { border-bottom: 1px solid var(--line); padding: 16px 0; }
+.memory-row .event-detail { margin: 7px 0; }
+.approval { padding: 24px; border: 1px solid #77603b; border-radius: var(--radius); background: var(--panel); margin-top: 30px; scroll-margin-top: 140px; }
+.approval-heading { color: var(--amber); }
+.checks { padding: 0; list-style: none; margin: 18px 0; }
+.checks li { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.checks li > strong { font-size: .89rem; min-width: 48px; }
+.check-text { min-width: 0; overflow-wrap: anywhere; }
+.check-text small { display: block; color: var(--muted); margin-top: 2px; }
+.reviewer { max-width: 460px; }
+.approval-actions { margin-top: 18px; }
+.artifact-section { margin-top: 26px; }
+.artifact-section iframe { width: 100%; height: 650px; border: 1px solid var(--line); background: var(--bg); margin-top: 16px; border-radius: var(--radius); }
+.inline-inspect { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 18px; scroll-margin-top: 140px; }
+footer { border-top: 1px solid var(--line); padding: 22px 30px; color: var(--muted); font-size: .89rem; }
+.loading-line { height: 22px; width: 65%; background: var(--raised); border-radius: 3px; margin: 12px 0; }
+@media (min-width: 1700px) { .workspace { grid-template-columns: 400px minmax(0, 1fr); gap: 38px; } .definition { padding-right: 34px; } }
+@media (max-width: 1120px) { .workspace { grid-template-columns: 310px minmax(0, 1fr); gap: 22px; padding: 22px; } .definition { padding-right: 21px; } .observe-header { flex-wrap: wrap; } .history { max-width: 100%; width: 100%; } .skill-stage { flex-basis: 40%; } .topbar { padding: 20px 22px; } .local { display: none; } }
+@media (max-width: 820px) {
+  .workspace { grid-template-columns: minmax(0, 1fr); padding: 24px 18px; gap: 34px; }
+  .definition { border-right: 0; padding-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 28px; }
+  .topbar { padding: 19px 18px; flex-wrap: wrap; gap: 17px; position: static; }
+  .identity svg { width: 33px; height: 33px; } h1 { font-size: 1.45rem; }
+  .actions { width: 100%; justify-content: space-between; } .actions button { flex: 1; }
+  .mobile-nav { display: flex; gap: 25px; border-bottom: 1px solid var(--line); padding: 13px 18px; }
+  .status-band, .approval { padding: 19px; } .current-action { font-size: 1.34rem; }
+  .span-title { flex-basis: 70%; } .event-row { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+  .span-body { margin-left: 8px; padding-left: 10px; } .artifact-section iframe { height: 550px; }
+  footer { padding: 22px 18px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  button, input, select { transition: background-color 160ms ease-out, border-color 160ms ease-out; }
+  .status-line.running .dot { animation: working 1.6s ease-out infinite; }
+  @keyframes working { 50% { opacity: .35; } }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#observe">Skip to run observation</a>
+<header class="topbar">
+  <div class="identity">
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M9 12h18l12 24H21L9 12Zm0 0v24h12m6-24 12 0v24" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="12" r="4" fill="currentColor"/><circle cx="27" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="36" r="4" fill="currentColor"/><circle cx="39" cy="36" r="4" fill="currentColor"/></svg>
+    <div><h1>Equity Event · Harness console</h1><div class="subtitle">Define the harness. Observe the real execution.</div></div>
+  </div>
+  <div class="flex actions"><span class="local"><span class="dot good"></span>Loopback only</span><button id="run-button" class="primary" form="definition-form" type="submit" disabled>Run harness</button></div>
+</header>
+<nav class="mobile-nav" aria-label="Console sections"><a href="#define">Define</a><a href="#observe">Observe</a><a href="#memory">Memory</a></nav>
+<main class="workspace">
+  <section class="definition" id="define" aria-labelledby="define-heading">
+    <div class="section-head"><h2 id="define-heading">Define</h2><p class="muted">Shape the harness around a fixed research task.</p></div>
+    <form id="definition-form">
+      <fieldset class="presets" id="presets"><legend>Start from a profile</legend><div class="loading-line"></div><div class="loading-line"></div></fieldset>
+      <div class="profile-contrast" aria-label="Current profile contrast"><h3>What changes with this profile</h3><dl><dt>Exposure</dt><dd id="contrast-exposure">Loading…</dd><dt>Memory</dt><dd id="contrast-memory">Loading…</dd><dt>Gates</dt><dd id="contrast-gates">Loading…</dd></dl></div>
+      <p id="profile-state" class="small muted">Loading local configuration…</p>
+      <p id="mode-note" class="small muted"></p>
+      <section class="concept-group" aria-labelledby="components-heading">
+        <h3 id="components-heading">HARNESS COMPONENTS</h3><p class="why">Fix the task; choose how the model runs.</p>
+        <label class="field"><span>Model execution</span><select id="model" name="model"><option value="live">Live · Microsoft Agent Framework</option><option value="scripted">Scripted · seeded date near-miss</option></select><code>model</code></label>
+        <details><summary>Deployment &amp; fixed runtime</summary>
+          <label class="field"><span>Azure deployment</span><select id="deployment" name="deployment" aria-describedby="deployment-help"><option value="gpt-5.6-terra">gpt-5.6-terra</option><option value="gpt-5.4">gpt-5.4 · explicit fallback</option></select><code>deployment</code><small class="help" id="deployment-help">Used for live model requests with the server's existing Azure credentials. This page never asks for keys.</small></label>
+          <ul class="fixed-facts"><li><strong>Fixed goal and instructions.</strong> Analyze the synthetic ACX earnings event and produce an evidence-backed briefing. Keeping the task fixed makes profile comparisons meaningful.</li><li><strong>One <code>AgentSession</code> per episode.</strong> Goal, constraints and plan persist across its turns without sharing a session between runs.</li><li><strong>Native MAF OpenTelemetry is on.</strong> The local exporter keeps model spans, tool spans and custom events inspectable in the same trace.</li></ul>
+        </details>
+      </section>
+      <section class="concept-group" aria-labelledby="autonomy-heading">
+        <h3 id="autonomy-heading">BOUNDED AUTONOMY</h3><p class="why">Bound how long the agent can keep trying.</p>
+        <details><summary>Budgets &amp; execution boundary</summary>
+          <label class="field"><span>Model requests</span><input id="max_model_requests" name="max_model_requests" type="number" min="4" max="60" required><code>max_model_requests</code></label>
+          <label class="field"><span>Tool calls</span><input id="max_tool_calls" name="max_tool_calls" type="number" min="8" max="100" required><code>max_tool_calls</code></label>
+          <label class="field"><span>Execution attempts</span><input id="max_execution_attempts" name="max_execution_attempts" type="number" min="1" max="5" required><code>max_execution_attempts</code></label>
+          <label class="field"><span>Execution timeout (seconds)</span><input id="execution_timeout_seconds" name="execution_timeout_seconds" type="number" min="1" max="30" required><code>execution_timeout_seconds</code></label>
+          <ul class="fixed-facts"><li><strong>Fixed arithmetic-only Python template.</strong> Restricts generated computation to the reviewed arithmetic boundary. Execution uses <code>python -I</code>; this is <strong>not an OS sandbox</strong>.</li><li><strong>Fixed no-progress guard: 3 identical calls.</strong> Rejects the next identical call to stop repetition without progress; this limit is not configurable.</li></ul>
+        </details>
+      </section>
+      <section class="concept-group" aria-labelledby="tooling-heading">
+        <h3 id="tooling-heading">PROGRESSIVE TOOLING</h3><p class="why">Expose only the capabilities the task needs.</p>
+        <label class="field"><span>Skill exposure</span><select id="skill_mode" name="skill_mode"><option value="progressive">Progressive · load when needed</option><option value="all_loaded">All loaded · up front</option></select><code>skill_mode</code></label>
+        <details><summary>Available skills <span id="skills-count" class="muted"></span></summary><p class="help"><code>available_skills</code> filters the framework's skill catalogue. Discovery exposes names and descriptions; it does not load skill instructions.</p><div id="skills-options"></div></details>
+        <details><summary>Domain tools <span id="tools-count" class="muted"></span></summary><p class="help"><code>enabled_tools</code> controls optional domain retrieval and execution.</p><div id="tools-options"></div><p class="help warning">Removing retrieval or execution tools may leave the model unable to finish. Infrastructure tools are fixed, not toggles.</p></details>
+      </section>
+      <section class="concept-group" aria-labelledby="hygiene-heading">
+        <h3 id="hygiene-heading">INTELLIGENT CONTEXT / CONTEXT HYGIENE</h3><p class="why">Carry useful context without treating memory as policy.</p>
+        <label class="toggle"><input id="memory_enabled" name="memory_enabled" type="checkbox"><span><strong>Recall and retain observations</strong><small><code>memory_enabled</code> · reads and writes appear in the trace.</small></span></label>
+        <details><summary>Memory scope &amp; context behavior</summary>
+          <label class="field"><span>Memory scope</span><input id="memory_scope" name="memory_scope" value="equity-event" maxlength="64" pattern="[A-Za-z0-9_\-]{1,64}" aria-describedby="memory-scope-help" required><code>memory_scope</code><small class="help" id="memory-scope-help">Reuse this scope to observe cross-run recall. Not a filesystem path.</small></label>
+          <ul class="fixed-facts"><li><strong>Filtered synthetic source results.</strong> Only admitted research inputs enter model context, keeping withheld content out.</li><li><strong>Compaction is OFF.</strong> No automatic trimming is wired; this runtime has no compaction setting to enable.</li><li><strong>Memory is evidence, not policy.</strong> Retained observations cannot override current constraints.</li></ul>
+        </details>
+      </section>
+      <section class="concept-group" aria-labelledby="gates-heading">
+        <h3 id="gates-heading">ACCEPTANCE GATES</h3><p class="why">Separate proposed completion from independently accepted evidence.</p>
+        <label class="field"><span>Acceptance mode</span><select id="gate_mode" name="gate_mode"><option value="strict">Strict · correct before completion</option><option value="observe">Observe only · report failures</option></select><code>gate_mode</code></label>
+        <details><summary>Fixed checks &amp; human approval</summary><ul class="fixed-facts"><li><strong>Mandatory policy is always on.</strong> Keeps data admission consistent across presets; it cannot be disabled.</li><li><strong>9 independent checks always run.</strong> Preserve independent failure observations in every mode. Observe mode never turns invalid output into a verified certificate.</li><li><strong>Human approval is separate and unskippable for a verified certificate.</strong> A reviewer, not the model or passing checks, grants publication approval. No email is sent.</li></ul></details>
+      </section>
+    </form>
+  </section>
+  <section id="observe" class="observe" aria-labelledby="observe-heading">
+    <div class="observe-header"><div><h2 id="observe-heading">Observe</h2><p class="muted">Framework spans + harness events. One trace.</p></div><div class="history"><label for="run-history">Run history</label><select id="run-history" disabled><option value="">No runs yet</option></select></div></div>
+    <div id="connection-error" class="notice error" role="alert" hidden></div>
+    <div id="action-error" class="notice error" role="alert" hidden></div>
+    <div id="export-warning" class="notice warning" role="alert" hidden><strong class="event-title">Telemetry export degraded</strong><p>Evidence may be stale or incomplete. The application status below is unchanged.</p><a href="#export-health-details">Inspect export health</a></div>
+    <div class="status-band">
+      <div id="run-status" class="status-line"><span class="dot"></span><span id="status-text">Ready to define</span></div>
+      <div id="current-action" class="current-action" aria-live="polite">Your next run starts here.</div>
+      <p id="run-description" class="run-description">Choose a profile or edit the harness, then run an episode. Nothing runs until you ask.</p>
+      <p id="warmup-hint" class="small muted"><strong>Warm up before the talk.</strong> Complete one live governed run with memory enabled, including human approval. Reuse that memory scope on the next run to inspect actual recall.</p>
+      <p id="fallback-hint" class="small warning" hidden></p>
+      <p id="review-jump" hidden><a href="#approval-panel">Review the dashboard and decide</a></p>
+      <div class="trace-identity"><span>Trace <code id="trace-id">Not started</code></span><span id="run-model">No model request yet</span><span id="elapsed"></span></div>
+    </div>
+    <div id="skill-stages" class="skill-stages" aria-label="Observed skill lifecycle">
+      <div class="skill-stage"><h3>Discovered metadata</h3><strong id="discovered-value">Not observed</strong><div class="stage-names" id="discovered-names"></div></div>
+      <div class="skill-stage"><h3>Selected for this task</h3><strong id="selected-value">Not observed</strong><div class="stage-names" id="selected-names"></div></div>
+      <div class="skill-stage"><h3>Instructions loaded</h3><strong id="loaded-value">Not observed</strong><div class="stage-names" id="loaded-names"></div></div>
+      <div class="skill-stage"><h3>Used in this run</h3><strong id="used-value">Not observed</strong><div class="stage-names" id="used-names"></div></div>
+    </div>
+    <section class="evidence-section" aria-labelledby="trace-heading">
+      <div class="evidence-heading"><h2 id="trace-heading">Execution trace</h2><p id="span-count">Native MAF spans appear here</p></div>
+      <div id="trace-tree" class="trace-tree"><div class="empty"><strong>Watch the model call its tools.</strong><p>Parent–child spans come directly from OpenTelemetry. Expand a span to inspect arguments, results and raw evidence.</p></div></div>
+    </section>
+    <section id="approval-panel" class="approval" aria-labelledby="approval-heading" hidden>
+      <h2 id="approval-heading" class="approval-heading">Human review required</h2>
+      <p id="approval-description"></p>
+      <ul id="verification-checks" class="checks"></ul>
+      <div id="approval-controls"><label class="field reviewer"><span>Reviewer name</span><input id="reviewer" autocomplete="name" maxlength="120" placeholder="Enter your name" aria-describedby="approval-help" disabled></label><p class="small muted" id="approval-help">Review the artifact below. Your decision creates a local receipt; no email is sent.</p><div class="flex approval-actions"><button id="approve-button" class="primary" type="button" disabled>Approve local result</button><button id="reject-button" class="danger" type="button" disabled>Reject</button></div></div>
+      <p id="approval-receipt" class="small" hidden></p>
+    </section>
+    <section id="artifact-section" class="artifact-section" hidden><div class="evidence-heading"><h2 id="artifact-heading">Reviewer dashboard</h2><p>Isolated preview · no network access</p></div><iframe id="artifact-frame" title="Runtime dashboard for human review" sandbox="allow-scripts" referrerpolicy="no-referrer" loading="lazy"></iframe></section>
+    <section id="memory" class="evidence-section" aria-labelledby="memory-heading"><div class="evidence-heading"><h2 id="memory-heading">Memory</h2><p id="memory-scope-label">Reads, writes and recalled trace IDs</p></div><div id="memory-content" class="empty"><strong>Recall is evidence, not a claim.</strong><p>Run with memory enabled to inspect what was read, written or recalled. No memory directory is exposed by this server.</p></div></section>
+    <section class="evidence-section" aria-labelledby="events-heading"><div class="evidence-heading"><h2 id="events-heading">Harness events</h2><p id="event-count">Skill lifecycle, memory and acceptance</p></div><ol id="event-list" class="event-list"><li class="empty">Application events appear beside the framework spans that contain them.</li></ol></section>
+    <details class="inline-inspect"><summary>Runtime state and result</summary><p class="help">Persisted evidence from this run. Sensitive credential fields are redacted.</p><pre id="runtime-json">No run selected.</pre></details>
+    <details id="export-health-details" class="inline-inspect"><summary>Telemetry export health</summary><p class="help">Latest same-trace health by its recorded timestamps. The sidecar can report an export failure even when the main snapshot is stale.</p><pre id="export-health-json">No export health reported.</pre></details>
+  </section>
+</main>
+<footer>Synthetic equity-event data · Not investment advice · Local interface; live model requests still use the configured Azure endpoint.</footer>
+<script nonce="__HARNESS_NONCE__">
+"use strict";
+const $ = id => document.getElementById(id);
+const nonce = document.querySelector('meta[name="harness-nonce"]').content;
+const formFields = ["model", "deployment", "skill_mode", "gate_mode", "memory_scope", "max_model_requests", "max_tool_calls", "max_execution_attempts", "execution_timeout_seconds"];
+const numberFields = ["max_model_requests", "max_tool_calls", "max_execution_attempts", "execution_timeout_seconds"];
+const terminal = new Set(["completed", "failed", "rejected", "interrupted"]);
+const state = { bootstrap: null, run: null, activeId: null, selectedId: null, busy: false, approvalBusy: false, polling: false, fingerprints: {}, runs: new Map(), preset: null };
+const toolLabels = {
+  public_source_search: ["Public source search", "Retrieve the local public-source snapshot."],
+  internal_api_lookup: ["Internal API lookup", "Read the synthetic internal portfolio and research inputs."],
+  execute_analysis: ["Execute analysis", "Run constrained arithmetic and generate the briefing artifact."]
+};
+const human = value => String(value || "").replace(/[_.-]+/g, " ").replace(/^\w/, character => character.toUpperCase());
+const text = value => typeof value === "string" ? value : value == null ? "" : JSON.stringify(value);
+const element = (tag, className, content) => { const node = document.createElement(tag); if (className) node.className = className; if (content != null) node.textContent = String(content); return node; };
+const setText = (id, value) => { if ($(id).textContent !== String(value)) $(id).textContent = String(value); };
+function showError(id, message) { $(id).textContent = message || ""; $(id).hidden = !message; }
+async function api(path, body) {
+  const options = { headers: { "Accept": "application/json" }, cache: "no-store" };
+  if (body !== undefined) Object.assign(options, { method: "POST", headers: { ...options.headers, "Content-Type": "application/json", "X-Harness-Nonce": nonce }, body: JSON.stringify(body) });
+  const response = await fetch(path, options);
+  const result = await response.json();
+  if (!response.ok) throw new Error(result.error || `Request failed (${response.status}).`);
+  return result;
+}
+function config() {
+  const result = Object.fromEntries(formFields.map(name => [name, $(name).value]));
+  numberFields.forEach(name => { result[name] = Number(result[name]); });
+  result.memory_enabled = $("memory_enabled").checked;
+  result.available_skills = [...document.querySelectorAll("[data-skill]:checked")].map(input => input.value);
+  result.enabled_tools = [...document.querySelectorAll("[data-tool]:checked")].map(input => input.value);
+  return result;
+}
+function applyProfile(key) {
+  const preset = state.bootstrap.profiles[key];
+  if (!preset) return;
+  state.preset = key;
+  const value = preset.config;
+  formFields.forEach(name => { if (value[name] !== undefined) $(name).value = value[name]; });
+  $("memory_enabled").checked = Boolean(value.memory_enabled);
+  document.querySelectorAll("[data-skill]").forEach(input => { input.checked = (value.available_skills || []).includes(input.value) || input.disabled; });
+  document.querySelectorAll("[data-tool]").forEach(input => { input.checked = (value.enabled_tools || []).includes(input.value); });
+  const radio = document.querySelector(`input[name="profile"][value="${key}"]`);
+  if (radio) radio.checked = true;
+  refreshDefinition(false);
+}
+function refreshDefinition(edited = true) {
+  const value = config();
+  setText("profile-state", edited ? "Custom definition · edits apply to the next run" : "Profile applied · every setting below is inspectable");
+  $("deployment").disabled = value.model === "scripted";
+  $("memory_scope").disabled = !value.memory_enabled;
+  setText("deployment-help", value.model === "scripted" ? "Not used by the scripted model. Choose live model execution to edit the Azure deployment." : "Used for live model requests with the server's existing Azure credentials. This page never asks for keys.");
+  setText("memory-scope-help", value.memory_enabled ? "Reuse this scope to observe cross-run recall. Not a filesystem path." : "Not used while memory is disabled. Enable recall and retain observations to edit the scope.");
+  setText("tools-count", `· ${value.enabled_tools.length}`);
+  setText("skills-count", `· ${value.available_skills.length}`);
+  setText("contrast-exposure", value.skill_mode === "progressive" ? "Names first; load when needed" : "All available instructions up front");
+  setText("contrast-memory", value.memory_enabled ? `Recall + retain · ${value.memory_scope}` : "No recall or new writes");
+  setText("contrast-gates", value.gate_mode === "strict" ? "Correct failures; then human review" : "Observe failures; no invalid certificate");
+  const messages = [];
+  if (value.model === "scripted") {
+    messages.push("Scripted model · seeded date near-miss. The seeded first attempt uses the wrong announcement date; tools genuinely execute. No live LLM request.");
+    messages.push(value.gate_mode === "observe" ? "Observe only keeps the unverified preview." : "Strict acceptance requests a bounded correction.");
+  } else {
+    messages.push("Live behavior is not scripted. An observe-only run may pass honestly; no failure is staged and no offline fallback is automatic.");
+  }
+  if (value.gate_mode === "observe") messages.push("Observe only: failures are reported, not corrected by the gate. An invalid preview never earns a verified certificate.");
+  if (value.enabled_tools.length < state.bootstrap.optional_tools.length) messages.push("Reduced tool access may make this run unable to finish.");
+  setText("mode-note", messages.join(" ") || "Strict acceptance requires passing evidence before completion. Human publication approval remains separate.");
+  $("mode-note").className = value.gate_mode === "observe" ? "small warning" : "small muted";
+  updateRunButton();
+}
+function updateRunButton() {
+  $("run-button").disabled = !state.bootstrap || state.busy || Boolean(state.activeId);
+  setText("run-button", state.busy ? "Starting…" : state.activeId ? "Harness active" : "Run harness");
+}
+function approvalIsActionable() {
+  const run = state.run;
+  return Boolean(run && state.selectedId === run.id && !run.restored &&
+    run.status === "awaiting_approval" && run.approval?.status === "pending");
+}
+function updateApprovalControls() {
+  const disabled = !approvalIsActionable() || state.approvalBusy;
+  for (const id of ["approve-button", "reject-button", "reviewer"]) $(id).disabled = disabled;
+}
+function fillDefinition(data) {
+  $("presets").replaceChildren(element("legend", "", "Start from a profile"));
+  for (const [key, profile] of Object.entries(data.profiles)) {
+    const label = element("label", "preset"), input = document.createElement("input"), caption = document.createElement("span");
+    input.type = "radio"; input.name = "profile"; input.value = key;
+    input.addEventListener("change", () => applyProfile(key));
+    caption.append(element("strong", "", profile.name), element("small", "", profile.description));
+    label.append(input, caption); $("presets").append(label);
+  }
+  for (const tool of data.optional_tools) {
+    const label = element("label", "toggle tool-option"), input = document.createElement("input"), caption = document.createElement("span");
+    input.type = "checkbox"; input.value = tool; input.dataset.tool = tool;
+    const copy = toolLabels[tool] || [human(tool), tool];
+    caption.append(element("strong", "", copy[0]), element("small", "", copy[1]));
+    label.append(input, caption); $("tools-options").append(label);
+  }
+  for (const skill of data.skills) {
+    const label = element("label", "toggle"), input = document.createElement("input"), caption = document.createElement("span");
+    input.type = "checkbox"; input.value = skill.id; input.dataset.skill = skill.id;
+    input.disabled = Boolean(skill.mandatory);
+    caption.append(element("strong", "", human(skill.name)), element("small", "", skill.description + (skill.mandatory ? " · Always on" : "")));
+    label.append(input, caption); $("skills-options").append(label);
+  }
+  applyProfile(data.profiles.governed ? "governed" : Object.keys(data.profiles)[0]);
+}
+function saveRun(run) {
+  state.runs.set(run.id, run);
+  const options = [...state.runs.values()].reverse();
+  const selected = state.selectedId;
+  $("run-history").replaceChildren(...options.map(item => {
+    const option = document.createElement("option");
+    option.value = item.id;
+    const clock = new Date(item.created_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    option.textContent = `${clock} · ${item.restored ? "Saved · " : ""}${human(item.status)}`;
+    return option;
+  }));
+  $("run-history").disabled = !options.length;
+  if (selected) $("run-history").value = selected;
+}
+function eventName(event) { return String(event.event || event.name || "Harness event"); }
+function eventDetails(event) {
+  const details = event.details && typeof event.details === "object" ? event.details : {};
+  const attributes = event.attributes && typeof event.attributes === "object" ? event.attributes : {};
+  return { ...attributes, ...details, ...event };
+}
+function eventSummary(event) {
+  const data = eventDetails(event);
+  if (eventName(event).toLowerCase() === "memory_index_read") {
+    if (data.file_present === false) return "No prior observation";
+    if (data.file_present === true) return "Prior observation available";
+    return "Index checked; availability not reported.";
+  }
+  for (const key of ["summary", "message", "description", "reason", "detail", "correction", "query", "goal", "rule"]) {
+    if (typeof data[key] === "string" && data[key]) return data[key].slice(0, 800);
+  }
+  const pieces = [];
+  for (const key of ["skill_name", "skill", "tool_name", "tool", "operation", "memory_scope", "scope", "decision", "attempt", "passed", "count"]) {
+    const value = key === "decision" && data[key] && typeof data[key] === "object" ? data[key].decision : data[key];
+    if (["string", "number", "boolean"].includes(typeof value)) pieces.push(`${human(key)}: ${text(value)}`);
+  }
+  return pieces.join(" · ").slice(0, 800);
+}
+function eventTitle(event) {
+  const name = eventName(event).toLowerCase();
+  const data = eventDetails(event);
+  if (name === "memory_index_read") return "Memory index checked";
+  if (name === "memory_read") return "Observation read";
+  if (name === "cross_run_memory_recalled") return "Cross-run recall";
+  if (/skill/.test(name) && /discover|catalog/.test(name)) return "Skill metadata discovered";
+  if (/skill/.test(name) && /select/.test(name)) return "Skills selected for the task";
+  if (/skill/.test(name) && /load/.test(name)) return /start|request/.test(name) ? "Skill instruction load requested" : /execute/i.test(data.phase || "") ? "Skill instructions loaded · mid-run" : "Skill instructions loaded";
+  if (/skill/.test(name) && /use/.test(name)) return "Skill used in this run";
+  if (/memory/.test(name) && /recall/.test(name)) return "Prior memory recalled";
+  if (/memory/.test(name) && /write|written|save|persist/.test(name)) return "Memory written";
+  if (/memory/.test(name) && /read|load/.test(name)) return "Memory read";
+  if (/correct|repair/.test(name)) return "Correction returned to the model";
+  if (/accept/.test(name) && /reject|denied|fail/.test(name)) return "Completion not accepted";
+  if (/accept/.test(name) && data.report) return data.report.passed ? "Acceptance checks passed" : data.gate_mode === "observe" ? "Acceptance observed · checks failed" : "Acceptance blocked · correction needed";
+  if (/accept/.test(name)) return "Acceptance evaluated";
+  return human(eventName(event));
+}
+function skillNames(event, stage) {
+  const data = eventDetails(event);
+  const candidates = stage === "discovered" ? ["catalogue", "catalog", "available_skills", "skills", "names"] :
+    stage === "selected" ? ["selected_skills", "selected", "skills", "names", "skill_name", "skill", "skill_id", "name"] :
+    stage === "loaded" ? ["loaded_skills", "skills", "skill_name", "skill", "skill_id", "name"] :
+    ["used_skills", "skills", "skill_name", "skill", "skill_id", "name"];
+  for (const key of candidates) {
+    const value = data[key];
+    if (!value) continue;
+    const values = Array.isArray(value) ? value : [value];
+    const names = values.map(item => typeof item === "string" ? item : item.name || item.skill || item.id).filter(Boolean);
+    if (names.length) return names;
+  }
+  return [];
+}
+function renderSkills(events) {
+  const stages = { discovered: { observed: false, names: new Set() }, selected: { observed: false, names: new Set() }, loaded: { observed: false, names: new Set() }, used: { observed: false, names: new Set() } };
+  for (const event of events) {
+    const name = eventName(event).toLowerCase();
+    if (!/skill/.test(name)) continue;
+    let stage = null;
+    if (/discover|catalog/.test(name)) stage = "discovered";
+    else if (/select/.test(name)) stage = "selected";
+    else if (/load/.test(name) && !/start|request|fail|error/.test(name)) stage = "loaded";
+    else if (/use/.test(name) && !/request|fail|error/.test(name)) stage = "used";
+    if (!stage) continue;
+    stages[stage].observed = true;
+    for (const name of skillNames(event, stage)) stages[stage].names.add(name);
+  }
+  for (const [stage, evidence] of Object.entries(stages)) {
+    setText(`${stage}-value`, evidence.names.size ? `${evidence.names.size} skill${evidence.names.size === 1 ? "" : "s"}` : evidence.observed ? "Observed" : "Not observed");
+    const names = [...evidence.names].map(human);
+    setText(`${stage}-names`, names.slice(0, 2).join(", ") + (names.length > 2 ? ` + ${names.length - 2} more` : ""));
+    $(`${stage}-names`).title = names.join(", ");
+  }
+}
+function spanStatus(span) {
+  if (!span.end_time) return state.run?.status === "interrupted" ? "interrupted" : terminal.has(state.run?.status) ? "unfinished" : "running";
+  const status = typeof span.status === "object" ? span.status.status_code || span.status.code || "" : span.status;
+  return /error|fail/i.test(String(status)) ? "error" : "ok";
+}
+function spanTitle(span) {
+  const attrs = span.attributes || {};
+  const tool = attrs["gen_ai.tool.name"] || attrs["tool.name"] || attrs.tool_name;
+  const model = attrs["gen_ai.request.model"] || attrs["gen_ai.response.model"];
+  return tool ? String(tool) : model ? `${span.name} · ${model}` : String(span.name);
+}
+function duration(span) {
+  let elapsed = Number(span.duration_ms);
+  const frozen = terminal.has(state.run?.status);
+  if ((!span.end_time && !frozen || span.duration_ms == null) && span.start_time) elapsed = (span.end_time ? new Date(span.end_time).getTime() : frozen ? new Date(state.run.updated_at).getTime() : Date.now()) - new Date(span.start_time).getTime();
+  if (!Number.isFinite(elapsed)) return spanStatus(span) === "running" ? "Running" : "";
+  return elapsed < 1000 ? `${Math.max(0, Math.round(elapsed))} ms` : `${(elapsed / 1000).toFixed(1)} s`;
+}
+function inspect(value, key, title = "Arguments, results & raw evidence") {
+  const details = element("details", "inspect"); details.dataset.key = key;
+  details.append(element("summary", "", title), element("pre", "", JSON.stringify(value, null, 2)));
+  return details;
+}
+function parsedContent(value) {
+  if (typeof value !== "string") return value;
+  try { return JSON.parse(value); } catch { return value; }
+}
+function replacePreservingDetails(container, fragment) {
+  const opens = new Map([...container.querySelectorAll("details[data-key]")].map(item => [item.dataset.key, item.open]));
+  container.replaceChildren(fragment);
+  container.querySelectorAll("details[data-key]").forEach(item => { if (opens.has(item.dataset.key)) item.open = opens.get(item.dataset.key); });
+}
+function renderSpans(spans) {
+  setText("span-count", `${spans.filter(span => span.origin === "maf").length} native MAF · ${spans.filter(span => span.origin !== "maf").length} application`);
+  if (!spans.length) {
+    $("trace-tree").replaceChildren(element("div", "empty", state.run ? "Waiting for exported OpenTelemetry spans. A run may be starting or may have failed before its first model request." : "Run an episode to observe native model and tool spans."));
+    return;
+  }
+  const allIds = new Set(spans.map(span => span.span_id)), children = new Map(), seen = new Set();
+  for (const span of spans) {
+    const parent = allIds.has(span.parent_span_id) && span.parent_span_id !== span.span_id ? span.parent_span_id : null;
+    if (!children.has(parent)) children.set(parent, []);
+    children.get(parent).push(span);
+  }
+  const render = (span, depth) => {
+    if (seen.has(span.span_id)) return document.createDocumentFragment();
+    seen.add(span.span_id);
+    const node = element("details", "trace-node"); node.dataset.key = `span-${span.span_id}`; node.id = `span-${span.span_id}`; node.open = true;
+    const head = element("summary", "span-head"), status = spanStatus(span);
+    const clock = element("span", "span-duration", duration(span)); clock.dataset.spanDuration = span.span_id;
+    head.append(element("span", "span-title", spanTitle(span)), element("span", `origin ${span.origin === "maf" ? "maf" : ""}`, span.origin === "maf" ? "Native MAF" : "Application"), element("span", `span-status ${status}`, status === "ok" ? "Ended" : human(status)), clock);
+    const body = element("div", "span-body");
+    body.append(element("p", "span-label", `Span ${span.span_id}`));
+    const attrs = span.attributes || {};
+    const args = attrs["gen_ai.tool.call.arguments"] ?? attrs["tool.arguments"] ?? attrs.arguments;
+    const result = attrs["gen_ai.tool.call.result"] ?? attrs["tool.result"] ?? attrs.result;
+    if (args !== undefined) body.append(inspect(parsedContent(args), `args-${span.span_id}`, "Tool arguments"));
+    if (result !== undefined) body.append(inspect(parsedContent(result), `result-${span.span_id}`, "Tool result"));
+    body.append(inspect(span, `raw-${span.span_id}`, "Raw span & model evidence"));
+    if (depth < 32) (children.get(span.span_id) || []).forEach(child => body.append(render(child, depth + 1)));
+    node.append(head, body);
+    return node;
+  };
+  const fragment = document.createDocumentFragment();
+  (children.get(null) || []).forEach(span => fragment.append(render(span, 0)));
+  spans.filter(span => !seen.has(span.span_id)).forEach(span => fragment.append(render(span, 0)));
+  replacePreservingDetails($("trace-tree"), fragment);
+}
+function jumpToSpan(id) {
+  const node = document.getElementById(`span-${id}`);
+  if (!node) return;
+  let parent = node;
+  while (parent) { if (parent.tagName === "DETAILS") parent.open = true; parent = parent.parentElement; }
+  node.scrollIntoView({ block: "center", behavior: "instant" });
+  const summary = node.querySelector("summary"); if (summary) summary.focus({ preventScroll: true });
+}
+function renderEvents(events) {
+  setText("event-count", `${events.length} events · newest first`);
+  const fragment = document.createDocumentFragment();
+  if (!events.length) fragment.append(element("li", "empty", "No application events exported yet."));
+  for (const event of events.slice(-100).reverse()) {
+    const row = element("li", "event-row"), at = event.at || event.timestamp;
+    const clock = at ? new Date(at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }) : "—";
+    const time = element("time", "", clock); if (at) time.dateTime = at;
+    const content = document.createElement("div");
+    content.append(element("div", "event-title", eventTitle(event)));
+    const summary = eventSummary(event); if (summary) content.append(element("p", "event-detail", summary));
+    if (event.span_id) { const button = element("button", "link-button", "Locate parent span"); button.type = "button"; button.addEventListener("click", () => jumpToSpan(event.span_id)); content.append(button); }
+    content.append(inspect(event, `event-${event.id || event.at}-${eventName(event)}`, "Inspect event evidence"));
+    row.append(time, content); fragment.append(row);
+  }
+  if (events.length > 100) fragment.append(element("li", "empty", `Showing the latest 100 of ${events.length} events. The complete trace remains in telemetry.json.`));
+  replacePreservingDetails($("event-list"), fragment);
+}
+function traceReferences(value, result = new Set(), depth = 0) {
+  if (!value || typeof value !== "object" || depth > 8) return result;
+  for (const [key, item] of Object.entries(value)) {
+    if (/trace.?ids?$/i.test(key)) {
+      for (const id of Array.isArray(item) ? item : [item]) if (typeof id === "string") result.add(id);
+    } else if (typeof item === "object") traceReferences(item, result, depth + 1);
+  }
+  return result;
+}
+function renderMemory(events, run) {
+  const memory = events.filter(event => /memory|recall/i.test(eventName(event)));
+  setText("memory-scope-label", run.config.memory_enabled ? `Scope: ${run.config.memory_scope}` : "Memory disabled for this run");
+  const container = $("memory-content"); container.className = "";
+  if (!memory.length) {
+    container.replaceChildren(element("div", "empty", run.config.memory_enabled ? "No read, write or recall has been observed yet. Reusing a scope does not prove that the model recalled it." : "Memory is disabled. No recall or new memory writes are expected in this run."));
+    return;
+  }
+  const list = element("ul", "memory-list");
+  for (const event of memory.slice(-12).reverse()) {
+    const row = element("li", "memory-row");
+    row.append(element("div", "event-title", eventTitle(event)), element("p", "event-detail", eventSummary(event) || "Inspect the event for the exact memory operation."));
+    for (const id of traceReferences(event)) { const line = element("div", "small"); line.append(element("span", "muted", id === event.trace_id ? "Current trace: " : "Referenced trace: "), element("code", "", id)); row.append(line); }
+    row.append(inspect(event, `memory-${event.id || event.at}`, "Inspect memory evidence")); list.append(row);
+  }
+  replacePreservingDetails(container, list);
+}
+function renderApproval(run) {
+  const approval = run.approval;
+  updateApprovalControls();
+  $("approval-panel").hidden = !approval;
+  $("review-jump").hidden = !approvalIsActionable();
+  const dashboardUrl = run.artifacts?.dashboard?.url || approval?.dashboard_url;
+  const expected = `/api/runs/${run.id}/artifacts/dashboard`;
+  $("artifact-section").hidden = dashboardUrl !== expected;
+  setText("artifact-heading", run.result?.status === "unverified_preview" ? "Unverified preview · not certified" : "Reviewer dashboard");
+  if (dashboardUrl === expected && $("artifact-frame").getAttribute("src") !== expected) $("artifact-frame").src = expected;
+  if (dashboardUrl !== expected) $("artifact-frame").removeAttribute("src");
+  if (!approval) return;
+  const pending = approvalIsActionable(), report = approval.report || {}, passed = report.passed === true;
+  setText("approval-heading", approval.status === "interrupted" ? "Approval interrupted · not resumed" : pending ? passed ? "Human review required" : "Unverified preview · human review" : `Review decision: ${human(approval.status)}`);
+  setText("approval-description", approval.status === "interrupted" ? "This is saved evidence. Start a new run for a new approval request." : pending ? passed ? "The verifier passed. Review the generated dashboard before approving this local result. Nothing is sent." : "The verifier did not pass. Observe-only review does not turn this preview into verified completion." : "The review decision is recorded with this run.");
+  $("approval-controls").hidden = !pending;
+  $("approval-receipt").hidden = pending;
+  setText("approval-receipt", `${human(approval.status)}${approval.reviewer ? ` by ${approval.reviewer}` : ""}${approval.decided_at ? ` · ${new Date(approval.decided_at).toLocaleTimeString()}` : ""}`);
+  setText("approve-button", passed ? "Approve local result" : "Approve unverified preview");
+  const checks = report.checks || [];
+  $("verification-checks").replaceChildren(...checks.map(check => {
+    const row = element("li"), detail = element("div", "check-text", human(check.code || check.name || "Verification"));
+    if (check.detail) detail.append(element("small", "", check.detail));
+    row.append(element("strong", check.passed ? "good" : "bad", check.passed ? "PASS" : "FAIL"), detail);
+    return row;
+  }));
+}
+function renderExportHealth(run) {
+  const health = run.export_health ?? run.telemetry?.export_health ?? null;
+  $("export-warning").hidden = health?.status !== "degraded";
+  setText("export-health-json", JSON.stringify({
+    selected: health,
+    source: run.export_health_source ?? (health ? "telemetry.json" : null),
+    snapshot: run.telemetry?.export_health ?? null,
+    sidecar: run.telemetry_health ?? null,
+  }, null, 2));
+}
+function renderRun(run) {
+  state.run = run;
+  updateApprovalControls();
+  renderExportHealth(run);
+  if (terminal.has(run.status) && state.activeId === run.id) state.activeId = null;
+  else if (!terminal.has(run.status)) state.activeId = run.id;
+  saveRun(run); updateRunButton();
+  const telemetry = run.telemetry || {}, events = telemetry.events || [], spans = telemetry.spans || [], last = events[events.length - 1], activeSpan = [...spans].reverse().find(span => spanStatus(span) === "running");
+  $("run-status").className = `status-line ${run.status}`;
+  setText("status-text", (run.restored ? "Saved run · " : "") + (({ running: "Episode running", awaiting_approval: "Waiting for your decision", completed: "Episode finished", failed: "Blocked · episode stopped", rejected: "Publication rejected", interrupted: "Interrupted · not resumed" })[run.status] || human(run.status)));
+  let action = run.runtime_state?.current_action;
+  if (typeof action !== "string") action = activeSpan ? spanTitle(activeSpan) : last ? eventTitle(last) : "Starting the agent runtime…";
+  if (run.status === "awaiting_approval") action = "The human gate is yours.";
+  if (run.status === "completed") action = run.result?.status === "unverified_preview" ? "Unverified preview. Not certified." : "Execution finished. Inspect the evidence.";
+  if (run.status === "failed") action = "This run is blocked. Its evidence remains here.";
+  if (run.status === "rejected") action = "Publication was not approved.";
+  if (run.status === "interrupted") action = "Interrupted. Saved evidence only.";
+  setText("current-action", action);
+  setText("run-description", run.error || (run.status === "awaiting_approval" ? "Review the verifier and dashboard below. Nothing is auto-approved." : last ? eventSummary(last) || "Follow the span tree and application events below." : "The server is executing the same runtime API as the command line."));
+  $("run-description").className = run.error ? "run-description bad" : "run-description";
+  $("warmup-hint").hidden = true;
+  $("fallback-hint").hidden = run.status !== "failed";
+  setText("fallback-hint", run.config.model === "live" ? "No fallback was used. Choose Scripted / offline manually to rehearse the seeded date near-miss." : "This scripted run is blocked too. Inspect the error and adjust its definition before retrying.");
+  setText("trace-id", telemetry.trace_id || "Waiting for trace export");
+  setText("run-model", run.config.model === "scripted" ? "Scripted model · seeded date near-miss · genuine tool execution · no live LLM" : `Live MAF · ${run.config.deployment}`);
+  const elapsed = (terminal.has(run.status) ? new Date(run.updated_at) : new Date()) - new Date(run.created_at);
+  setText("elapsed", run.status === "interrupted" ? "Timing incomplete" : `${Math.max(0, Math.round(elapsed / 1000))} s elapsed`);
+  const sections = { skills: events, spans, events, memory: [events, run.config], approval: [run.approval, run.artifacts, run.result?.status], runtime: [run.runtime_state, run.result] };
+  for (const [name, value] of Object.entries(sections)) {
+    const fingerprint = JSON.stringify(value);
+    if (state.fingerprints[name] === fingerprint) continue;
+    state.fingerprints[name] = fingerprint;
+    if (name === "skills") renderSkills(events);
+    if (name === "spans") renderSpans(spans);
+    if (name === "events") renderEvents(events);
+    if (name === "memory") renderMemory(events, run);
+    if (name === "approval") renderApproval(run);
+    if (name === "runtime") setText("runtime-json", JSON.stringify({ runtime_state: run.runtime_state, result: run.result }, null, 2));
+  }
+  const byId = new Map(spans.map(span => [span.span_id, span]));
+  document.querySelectorAll("[data-span-duration]").forEach(clock => {
+    const span = byId.get(clock.dataset.spanDuration);
+    if (span && !span.end_time) clock.textContent = duration(span);
+  });
+}
+async function poll() {
+  if (state.polling || !state.selectedId) return;
+  state.polling = true;
+  const id = state.selectedId;
+  try {
+    const run = await api(`/api/runs/${id}`);
+    if (state.selectedId === id) renderRun(run);
+    if (state.activeId && state.activeId !== id) {
+      const active = await api(`/api/runs/${state.activeId}`);
+      saveRun(active); if (terminal.has(active.status)) { state.activeId = null; updateRunButton(); }
+    }
+    showError("connection-error", null);
+  } catch (error) { showError("connection-error", `Connection interrupted: ${error.message} Retrying automatically; the runtime may still be working.`); }
+  finally { state.polling = false; }
+}
+$("definition-form").addEventListener("input", event => { if (state.bootstrap && event.target.name !== "profile") refreshDefinition(); });
+$("definition-form").addEventListener("submit", async event => {
+  event.preventDefault();
+  if (state.busy || state.activeId || !state.bootstrap) return;
+  state.busy = true; updateRunButton(); showError("action-error", null);
+  try {
+    const run = await api("/api/runs", { config: config() });
+    state.selectedId = run.id; state.activeId = run.id; state.fingerprints = {}; $("reviewer").value = "";
+    renderRun(run); $("observe").scrollIntoView({ block: "start", behavior: "instant" });
+  } catch (error) { showError("action-error", `${error.message} Edit the definition or check local server settings, then try again.`); }
+  finally { state.busy = false; updateRunButton(); }
+});
+$("run-history").addEventListener("change", async event => {
+  state.selectedId = event.target.value; state.fingerprints = {}; $("reviewer").value = "";
+  updateApprovalControls(); await poll();
+});
+async function decide(decision) {
+  if (!approvalIsActionable() || state.approvalBusy) { updateApprovalControls(); return; }
+  const run = state.run, reviewer = $("reviewer").value.trim();
+  if (!reviewer) { showError("action-error", "Enter your reviewer name before approving or rejecting."); $("reviewer").focus(); return; }
+  state.approvalBusy = true; updateApprovalControls(); showError("action-error", null);
+  try {
+    const response = await api(`/api/runs/${run.id}/approval`, { decision, reviewer });
+    if (state.selectedId === run.id) renderRun(response);
+    else saveRun(response);
+  } catch (error) { showError("action-error", error.message); }
+  finally { state.approvalBusy = false; updateApprovalControls(); }
+}
+$("approve-button").addEventListener("click", () => decide("approve"));
+$("reject-button").addEventListener("click", () => decide("reject"));
+async function start() {
+  try {
+    const data = await api("/api/bootstrap"); state.bootstrap = data; state.activeId = data.active_run_id;
+    fillDefinition(data);
+    for (const run of [...data.runs].reverse()) saveRun(run);
+    state.selectedId = data.active_run_id || data.runs[0]?.id || null;
+    if (state.selectedId) { $("run-history").value = state.selectedId; await poll(); }
+    updateRunButton();
+  } catch (error) {
+    showError("connection-error", `Cannot load the harness definition: ${error.message} Reload this page after fixing the server configuration.`);
+    setText("profile-state", "Configuration unavailable · no run has started");
+  }
+}
+start();
+setInterval(poll, 700);
+</script>
+</body>
+</html>

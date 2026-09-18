@@ -1,0 +1,30 @@
+{
+  "data_classification": "synthetic-illustrative",
+  "source_id": "src-internal-policy",
+  "api": "mock://research-policy/v3/equity-event",
+  "policy_id": "equity-event-research-standard",
+  "version": "3.2.0",
+  "target_sink": "shared-research-briefing",
+  "rules": {
+    "event_date": {
+      "before_open": "same_trading_day",
+      "during_session": "same_trading_day",
+      "after_close": "next_trading_day"
+    },
+    "prices_must_be_adjusted": true,
+    "benchmark_required": true,
+    "approved_benchmark": "CHIP",
+    "causal_attribution_requires_primary_evidence": true,
+    "required_sections": [
+      "event_summary",
+      "market_reaction",
+      "portfolio_exposure",
+      "thesis_update",
+      "risks_and_uncertainties",
+      "sources_and_methods"
+    ],
+    "forbidden_output_fields": ["shares", "cost_basis", "weight_pct"],
+    "human_approval_required": true,
+    "lesson_promotion_requires": ["reviewer_approval", "regression_replay"]
+  }
+}

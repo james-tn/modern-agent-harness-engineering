@@ -1,0 +1,856 @@
+{
+  "type": "session",
+  "session_id": "466f57aa-aa77-4a95-8563-d73c65e28dd2",
+  "service_session_id": null,
+  "state": {
+    "todo": {
+      "items": [
+        {
+          "id": 1,
+          "title": "Retrieve and classify public event evidence",
+          "description": "Use the approved financial-source retrieval process to obtain the synthetic public snapshot and identify the announcement details.",
+          "is_complete": true
+        },
+        {
+          "id": 2,
+          "title": "Retrieve internal policy and contextual inputs",
+          "description": "Read policy, portfolio, thesis, and lessons, applying confidentiality and source restrictions.",
+          "is_complete": true
+        },
+        {
+          "id": 3,
+          "title": "Align the effective trading date",
+          "description": "Apply the event-date policy to the announcement timestamp and market calendar.",
+          "is_complete": true
+        },
+        {
+          "id": 4,
+          "title": "Calculate benchmark-adjusted return",
+          "description": "Use approved adjusted-price inputs and execute the prescribed abnormal-return expression.",
+          "is_complete": true
+        },
+        {
+          "id": 5,
+          "title": "Verify, seek approval, and complete",
+          "description": "Run independent verification, request reviewer approval if passing, then complete the episode under the applicable gate rules.",
+          "is_complete": true
+        }
+      ],
+      "next_id": 6
+    },
+    "agent_mode": {
+      "current_mode": "plan"
+    },
+    "live-runtime": {},
+    "message_injection.pending_messages": [],
+    "in_memory": {
+      "messages": [
+        {
+          "role": "user",
+          "contents": [
+            {
+              "type": "text",
+              "text": "PLAN only: recall file memory when enabled and record the five-task plan. Then stop.",
+              "additional_properties": {}
+            }
+          ],
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF69pCkvRn54kedHPoLtYgDeDcPTv-OVl_N7_4wp7MtJZbizLQ8XZqG9OMtPeqdt8nmxnFTCuvHKmOVQjORGQBbYSp_Sc_kj34sUgd6CIjbuK8pCHDGbZ1lzvUGCpU8DfAeLLqKSiSXZlKEwzXrowEg0Qz9Mg4MxDDi1dKeXAyT3YJMPzP_Hoobxf6ZyxgBkqrxY72b0yVOKLKC1AOuwt07mkJyOpcnLSnJqiKKYmOMKNuzaAWFpSZxwZBfqrIT_IHeqaIHgh8qDAwLjeGXmW4NjWiewUqClKP5Za4uNkrx-PirRhtUQzWmqp3odqdkpIOvZ13p_Nux8KWsO2eNXSNaLmKgpC4mFEUcdsVfQdH9GOthmOC-k4exUVQDs6J0DgBJAJHG4rx9n9K9l7BYbyuxAT_UIA9oh0jvjVd4JOAzOjcFvkKECLdBekoiiBAX31sBZgbl1Jqk9LTVRiQdjsZprPVJqPH8sGOSxJT9YoVNFDJQdzz_KXQqFVvmkngJSkO61StxBbxwzllw8JKyQKIIBr6bte-rN6FzU2BpYF7icQx93Jmq_5v6B5uPGAqZ0koOLzKF9Y1t8IUUguCEc3toTKjHWS7aZA0cHVhRh6Q8ACcZGy4tO7OxUJWCw9HB0Wg92vc-IP_7CDLer0Np9lVlgUh6FEe4t9dI2HnKqg_Um_cHTOH6oLZHIfnB-XbUvja7AJmEpRf3l56Vmq7tzu_Y_kzk1Mb07BMBj8z0840QDXb-Q5ks_oZQ_ksfwlbLwv3RZubqPmgzGCGgrzsj6rxoJqlv8BS4d5ckD0Q7-nhcPXqO-lGoGBAYj3l9iB6EHzpyAwr-lMFFHQ_vbVCOPny-w8LqvbEYMpjfYYSJK4ScdBdFTbcIJIMUGUukQmpFJPq0qlNj5EJo-StrNwegqzWWDSEIz2vWUN88d3K6Zg60nfv9_nNHbo3trdRrjmvGOGOcMc6142JUylHXKCTXCnRNgKux-vJdE3iM4SpFn24VMDg6m16jCL3d_6d82Jh3_UuDnCYIIYCAqrPggULmhe0u4vdDt0tdzes80pBDzOJBoFYa2IMx13PXX5AS5U9lD-5TMs6fTDbPgAf8KRCENyYvxeWNHycojMuM655aRZ21hg0bRNReR5MuyDrYSIDz4G0p87onMu_ta1S1o9X3tkMAml_Q8qUkd_irdijmA97Wr7IxfN66hKcFGFlPmkEK55GHlJpkjmhK3akxurt4O0Xh4lJeh4uw_v2cCYxtkgGuhG0z8dQTdSyso_u0CbApNAB6T",
+              "id": "rs_0a3688cf4745caeb016aac5ebbcbc481939a71a9a42a7d9099",
+              "additional_properties": {}
+            },
+            {
+              "type": "text",
+              "text": "I\u2019ll create and persist a five-step research plan only; memory is disabled in this runtime, so there is no file memory to inspect.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_33rrB2quuXZizBwp4DhALB54",
+              "name": "todos_add",
+              "arguments": "{\"todos\":[{\"title\":\"Retrieve and classify public event evidence\",\"description\":\"Use the approved financial-source retrieval process to obtain the synthetic public snapshot and identify the announcement details.\"},{\"title\":\"Retrieve internal policy and contextual inputs\",\"description\":\"Read policy, portfolio, thesis, and lessons, applying confidentiality and source restrictions.\"},{\"title\":\"Align the effective trading date\",\"description\":\"Apply the event-date policy to the announcement timestamp and market calendar.\"},{\"title\":\"Calculate benchmark-adjusted return\",\"description\":\"Use approved adjusted-price inputs and execute the prescribed abnormal-return expression.\"},{\"title\":\"Verify, seek approval, and complete\",\"description\":\"Run independent verification, request reviewer approval if passing, then complete the episode under the applicable gate rules.\"}]}",
+              "id": "af-call-e7b84885b27f4455a569e6a7d09b7e7e",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ebc78688193a632bebca0add6a9",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_33rrB2quuXZizBwp4DhALB54",
+              "result": "[{\"id\": 1, \"title\": \"Retrieve and classify public event evidence\", \"description\": \"Use the approved financial-source retrieval process to obtain the synthetic public snapshot and identify the announcement details.\", \"is_complete\": false}, {\"id\": 2, \"title\": \"Retrieve internal policy and contextual inputs\", \"description\": \"Read policy, portfolio, thesis, and lessons, applying confidentiality and source restrictions.\", \"is_complete\": false}, {\"id\": 3, \"title\": \"Align the effective trading date\", \"description\": \"Apply the event-date policy to the announcement timestamp and market calendar.\", \"is_complete\": false}, {\"id\": 4, \"title\": \"Calculate benchmark-adjusted return\", \"description\": \"Use approved adjusted-price inputs and execute the prescribed abnormal-return expression.\", \"is_complete\": false}, {\"id\": 5, \"title\": \"Verify, seek approval, and complete\", \"description\": \"Run independent verification, request reviewer approval if passing, then complete the episode under the applicable gate rules.\", \"is_complete\": false}]",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "[{\"id\": 1, \"title\": \"Retrieve and classify public event evidence\", \"description\": \"Use the approved financial-source retrieval process to obtain the synthetic public snapshot and identify the announcement details.\", \"is_complete\": false}, {\"id\": 2, \"title\": \"Retrieve internal policy and contextual inputs\", \"description\": \"Read policy, portfolio, thesis, and lessons, applying confidentiality and source restrictions.\", \"is_complete\": false}, {\"id\": 3, \"title\": \"Align the effective trading date\", \"description\": \"Apply the event-date policy to the announcement timestamp and market calendar.\", \"is_complete\": false}, {\"id\": 4, \"title\": \"Calculate benchmark-adjusted return\", \"description\": \"Use approved adjusted-price inputs and execute the prescribed abnormal-return expression.\", \"is_complete\": false}, {\"id\": 5, \"title\": \"Verify, seek approval, and complete\", \"description\": \"Run independent verification, request reviewer approval if passing, then complete the episode under the applicable gate rules.\", \"is_complete\": false}]",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ebc78688193a632bebca0add6a9",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "function_call",
+              "call_id": "call_63hievXdXhuK3jKieti5g0SR",
+              "name": "record_plan",
+              "arguments": "{\"Tasks\":[\"Retrieve and classify the synthetic public event evidence and announcement details.\",\"Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.\",\"Determine the effective trading event date using the approved timestamp and trading-calendar rules.\",\"Execute the approved adjusted-price benchmark-relative abnormal-return calculation.\",\"Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.\"],\"Recalled Trace Id\":\"\",\"Recalled Rule\":\"\"}",
+              "id": "af-call-d498df14e2a645b88ea47f8f3fd1ea76",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ebffe748193bd94b353d24e0818",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_63hievXdXhuK3jKieti5g0SR",
+              "exception": "3 validation errors for record_plan_input\ntasks\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nrecalled_trace_id\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nrecalled_rule\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+              "result": "Error: Argument parsing failed. Exception: 3 validation errors for record_plan_input\ntasks\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nrecalled_trace_id\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nrecalled_rule\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "Error: Argument parsing failed. Exception: 3 validation errors for record_plan_input\ntasks\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nrecalled_trace_id\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nrecalled_rule\n  Field required [type=missing, input_value={'Tasks': ['Retrieve and ...'', 'Recalled Rule': ''}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ebffe748193bd94b353d24e0818",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF7Dhib3jYRN5smsRr58I-xckiMZ3oTNqPH-VHTJ4_5NiR6kFHh74mhGU6IpiTJzeLNrlNfbutrKfHrSwvRVngRMpVv1BFZSgFIvskwPM1NbDcyv-v9toyN7U5GwPuBHl_yzcHmPb3jvgexuFkq5t0-QSTUK6eqNUxZNcwxMhLrXOFDyXQgRKL0dPfxsPFogvzgJelCGlUI4D5JfT0tEEfu5fjuvEtIzSjviatdVm-p8XLRMzvB1c2-ndI2gAfcKJjMl70U4OUM0SbMCgzUKCu9RlJrMvfSw5aHX42DU49_vb9NTDV1tmaspbcuresS7TatsnBxKhg1id_eo_KsoqRVnyLkSmxfgQ8c_3yNfteZ9kmjPfNScMLZ3Nd4OAhJ187MAtffw-8jSv-PQ__e7iCsfx-4Y5X5TkELsRnpa5t9ROvXwFe0V6fqkMofo9-HplxcLwRNIiuB2H3uB6qBRQUbJxe7Io4xovkX7iPw-vJH4RW0ngOS2eZZMo_NIJ3hh5oM10HYU5PDjvhXnbN7zkfE8b2hIBjqYGzMUS3O0xtkXAfX4FKAqgvmPbQDuj8F7hTHS9NbO4mOTP1zCXqFAiA5VfomvKCV2v0vwCjuVtZh_mG7Dnzn6ZoAgoh2zSBXLvejM7uLmaPyALkSvcflYgNj8f1MzIw2hXEVuUBqUBAX0whGxUsJggL1RqPtoU4zZ83If62Szzj3pIe6RK39lY_QByB7nnM8Gy9WvkDFgKg7P6ge5D6vw3n8Oc68RZdLpRgPERNcexRG4WYttZG-TrKZPTKNoqpSxe7xFiQn90e9Z1SncnBelmf0aQ7cFikgsng9Or6S9c7JmdgrkBOjPGdBMRhW-jSFySKF_Ly2jpXO94pJMLiMUJiUKS7wsH4-ouaU_5kaI3Lmp5tv5-qRZ4hzvHdy8vJc0K94UaN3Qu-I5ADmwdKwgwKxg6Wb00bGyPmYBvqy9zkwDetKN3bL-qUhoC7okeCA-KbDkWbGlkTaeHcOLITt0ApRryjrCAsUtOQ48K1i6MWtcwtGbVHkgSHQM9e31o0wdujcvMy9ROmgLR0QVeLqKTluUXfLvvNMUraRNknMNBGMGH4STx5ay-HSVTBMJrfE-gWcygmaE1TukbDvSqsLAas5Vl0KyVxIvfQXQYkJvtOKy6nc3wMiwGI_82w==",
+              "id": "rs_0a3688cf4745caeb016aac5ec2327081938da334c70ea50615",
+              "additional_properties": {}
+            },
+            {
+              "type": "text",
+              "text": "The plan-record call rejected title-cased parameter names. I\u2019ll correct the parameter keys and make no further research calls.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_TNAnVZxAsxC8AZ3YNMoI9UT9",
+              "name": "record_plan",
+              "arguments": "{\"tasks\":[\"Retrieve and classify the synthetic public event evidence and announcement details.\",\"Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.\",\"Determine the effective trading event date using the approved timestamp and trading-calendar rules.\",\"Execute the approved adjusted-price benchmark-relative abnormal-return calculation.\",\"Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.\"],\"recalled_trace_id\":\"\",\"recalled_rule\":\"\"}",
+              "id": "af-call-7baa3c0373db48dc9b5022389d27f79a",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ec2add481938e9c2d6019059cfd",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_TNAnVZxAsxC8AZ3YNMoI9UT9",
+              "result": "{\"status\": \"planned\", \"tasks\": [\"Retrieve and classify the synthetic public event evidence and announcement details.\", \"Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.\", \"Determine the effective trading event date using the approved timestamp and trading-calendar rules.\", \"Execute the approved adjusted-price benchmark-relative abnormal-return calculation.\", \"Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.\"], \"next\": \"Wait for the EXECUTE user turn.\"}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"status\": \"planned\", \"tasks\": [\"Retrieve and classify the synthetic public event evidence and announcement details.\", \"Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.\", \"Determine the effective trading event date using the approved timestamp and trading-calendar rules.\", \"Execute the approved adjusted-price benchmark-relative abnormal-return calculation.\", \"Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.\"], \"next\": \"Wait for the EXECUTE user turn.\"}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ec2add481938e9c2d6019059cfd",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text",
+              "text": "Plan recorded with five concrete tasks. File memory is disabled, so no memory file was available to recall. I will stop here pending an EXECUTE instruction.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "contents": [
+            {
+              "type": "text",
+              "text": "EXECUTE the recorded plan for the synthetic ACX event. Read episode state, load skills on demand, use tools, verify, request review, persist validated memory and complete.",
+              "additional_properties": {}
+            }
+          ],
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF7oP-ijtSzH52XWbcgWVEMCJ6a6FY40BmGLIfdLxSVyljhjluCRumwSLnBRl7lXmoHqf1KpDkUs2lSrqJqxxg6TKwegfnx9KToFhzGn1vzinvLtx7tBWBfW9Uha5Egcy7jL-FgadRAE-GFCJy_MDkX5hBZYQENBkcsxMyy5FcJrUZO8M2lrPp1Or0eKTXXPrNQsVUz1cTIqXLLF9Vo7bksK9CBW62la_Dju5NAhVm3APQCA_s3E-mBMl3w62-YNRWXuHvec3JpFrhE_Oy1G9v6grjo94BFze7YvKaDCmUZWpaKdtBS5yQy6BPpTQv8X1a_Y0vrgABmq7jPegp5L3u5-Yk8Cl_a8AeK_EGxuOurO3v_sBHeM9fjVNKlIJGGHyCK-glwR7NMoGU_3tqciw2BA323em5HHjUj2CG4UYb_lPhgkLPvZEAGJgbsst38qFeADY3hDEPKiHGBlpDqS14czzAit-_3OxbAB23ucJPBAII9BRXONJGUTle_vu9Fk_Vhepw7JzN6OtcenHHBrV_UT7YwK1wPWUG0k_DcHGgwL5SETlTeWc5-A1tCsY9BTs2RGMQWzhxsKk2YQIasLQzhPOlzt9mZBKamCAlAz0RHl-YpB6-d_UT8b9g9JuAPuBprCO3R0JWoK7RVKJmN-89Lsx9yvfwKvtc9YVQ98wveMe2ZDinQsyIJ3qQPEebte2z8rWikc9jPiu2STFUdNCS0ZwkdYpLuZeBefEiqERnq0KqYHSMgzo_ks89daJUVLG2JPgeb0K78GVuOj7mDLbvc9kMYA53jzwM8Ra7YL4o0CsO0OzS-e-zy2Yypy4_a87mYyrNN2xi2IwfYXiEv-UKSlod4BgrxucuJd7Wmkq7Jx7i4ObYVnvEVjeZ1HgPRr8Y1XtsNLlolg-knSNw8TdYW-eEyKkS1i_oLMSStmmmGZeE-_57aBokI9VzGidcZQ9jsCwLEMEA0aUQVaqgD0Av2Ij4Btib0a17oUIP5PbotOz4GLfXME47-MktOXT-0Yd-SUj2Sfvsau3TwleBsuURK8mKRekaZkcY2uTHCnAX8ljBdYqy_yioh9DkpH5AVbgKLbzp_VOiSITLKPGTGNz2RIdMzu1E_sWS8dsBFEPVDOu0LfljgnYVEvEwf0oXFQnKab3utmwmrzxG58amJrA_6g_JpJEMXOLQE6CuU9q7i4p5S6ntOlVMQ7kusfeRvvKxFiKwDQ_3rx9-RgtlozFOt_wGomhdN1tjYohu-8DEw7v_dyJFAc9BmtRAlv0UPVSI7MHdCeRU4H7wunCBYjsi-5-d_fieSX6v7k3qBzwGbvkiM9EKY_bZWyqPrdihWfARaSo9Gvy-fLAMjUbSIQNas5W1Vnq9LJiHIaOHyrGc_o76keztAlZZ7LTt30Y7lXycTTTY5JoZuvh69mi2rSoDW-sRHhiRWehHF7zChCAW_qtgZzhpSwWDyRlSLWUEKoPuq2HNb7en_SZYqC0_ftCoCX_OXS1mIREdFAiPc3nMqVehp19UzydWnkP0Tey6NQgLqPoBRd0QQhsh3uVR1VoP6cwgitpwExZgjjU58qnasnbLtFt7hBldpGdnpfj29VxYl9zo5ovZiD5mxQ0CaILZZVWG1kU-tn3j51ns6RGzGnFv1sfijva0uG6rrXCnNo5BPq-wK0AG237ridocqOEkTyrZUnw_MJqO6lsKrNtixqhbdUMO_oPkjiq0czfHLnsuuI3QKkAtOYejsv2MBlyUmLv2mOqV3vaCKvgUwIRvE46Qemw3MsNbk-a1KC8MAk47yrxJYzAdQvvMWSPe9NGv6W3Yf1tUA8FBcyv67h1HNrC8HTOFXzGrSv7Vd9n5zbXyGQCkt2BeAk-rF4600r4O7vWPxFeUAvSswpP0VqOya6SKY=",
+              "id": "rs_0a3688cf4745caeb016aac5ee5e754819392aae5de2c54a29e",
+              "additional_properties": {}
+            },
+            {
+              "type": "text",
+              "text": "I\u2019ll resume the recorded plan, first confirming its durable state. I\u2019ll then retrieve the required synthetic public and internal evidence, apply the date and return methodology, and submit only a verified result for review.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_NAhBscyzgaxmFNXaQ5PWcD8f",
+              "name": "get_episode_state",
+              "arguments": "{}",
+              "id": "af-call-3d85bcf9e4f340fa9e7cd80618b260fc",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ee7fd2c8193a0478f08ba72f519",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_NAhBscyzgaxmFNXaQ5PWcD8f",
+              "result": "{\"trace_id\": \"a6befe8a38c49fb6bd53e3ccf03469fa\", \"plan\": [\"Retrieve and classify the synthetic public event evidence and announcement details.\", \"Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.\", \"Determine the effective trading event date using the approved timestamp and trading-calendar rules.\", \"Execute the approved adjusted-price benchmark-relative abnormal-return calculation.\", \"Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.\"], \"phase\": \"execute\", \"skills_loaded\": [\"abnormal-return-model\", \"corporate-actions-monitor\", \"credit-event-analysis\", \"equity-event-analysis\", \"event-date-alignment\", \"evidence-verification\", \"financial-source-retrieval\", \"interactive-briefing\", \"options-surface-analysis\", \"portfolio-impact\", \"research-policy\"], \"attempts\": 0, \"memory_recalled\": null}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"trace_id\": \"a6befe8a38c49fb6bd53e3ccf03469fa\", \"plan\": [\"Retrieve and classify the synthetic public event evidence and announcement details.\", \"Read the policy, portfolio, thesis, and lessons resources while enforcing confidentiality restrictions.\", \"Determine the effective trading event date using the approved timestamp and trading-calendar rules.\", \"Execute the approved adjusted-price benchmark-relative abnormal-return calculation.\", \"Verify the completed analysis, request approval only if it passes, and complete the episode according to the gate.\"], \"phase\": \"execute\", \"skills_loaded\": [\"abnormal-return-model\", \"corporate-actions-monitor\", \"credit-event-analysis\", \"equity-event-analysis\", \"event-date-alignment\", \"evidence-verification\", \"financial-source-retrieval\", \"interactive-briefing\", \"options-surface-analysis\", \"portfolio-impact\", \"research-policy\"], \"attempts\": 0, \"memory_recalled\": null}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ee7fd2c8193a0478f08ba72f519",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF7qCkGeK4-1ysHV1P9F44vEYhzs-6SSfeOqUWuw-rZzasgNwUyj5disKAQehqGhk5ziaphhyRXEPdLZYKbW7vqvpy6GtTqyuUectUYCCPtoaOO6Es_jfE-4YG2jSGh5L6CzO5TcIzh39PZYp5ijot6YG2bEoEhCoukyWeExjs6Zd5AkcRCskvg5L2AIW8hSShJJALtY5CSiootSl6OIdw-K6BDi0YGgsgUyucqIXOcbeauuKBSlmB2rzrVQziESDiHpmS-TNAXXEpRGxlDkHrPauyBBWUVOpQ5VHMvfRAZjh_G7vg75OPgP0DrrSrc_dMrOZeXv_4CKuncNwljXuG4UfTBOqOPlzxo2B3t7-0-mBHa79zA8ToHRB2PATKUW9Bv5P2SgMHcKH6aHuZkbbMaBHVXwXI8n0VjvtinyBog1gjq4RiYwK3BqSLhmfmmVadbq0icousuk-ZqU9td7-fE2GvJegI9nXSEzSJgeU_1AEVKH2MjOhxHhi59T-6GXtQWeEiUqOANvvyxywzpGU2YtH00KfUHZJFsdfvrncn1JJ8gsJTTWASbib5VA9W9_7q-R__nf1vWNvozhCmPsS9jyDAFAMtHolLYTjgakPLgcIMSg82TCobwmEtPKzKZiuntf1lJou68sn7JGFQQHdk8GyeT_7v_dj_j6vMWTLlUPYOzAauzx_NsEaFLyhO6sHaXGZUqC6cx5unQMJusqKFHdcyGlmojsJqnw3-5HzJ2a42IRP5I4w0w01ZRZtq-mdIQQba6_kXMZEwNkxuZvnWaXAy1QBk39Zbaqc8hlojrj0y9Odg59kDKtaCtxgi3C4Y-S_suFOZ4MulIJSpME00kHmV9yAkOIBcTM68H4W4b2ZSeG2rCbXLDLcTBqWtQUzful75isiAfpzCd3aQ2nGybO-miU6y1dlWkkzoehpq8jRmj7rp7tvcOjTlNbPcd6lFvJlkEFmjYg2n0LnkTjbA2tlA2VUHF3hHCQ-x_doO8gvAXISf5XVVcZroISMHNWo6wrr21i1cWTumHy0jQrl-IobeU5CWixZNAwnBzYzY86r6C3dUFQq9c2RSBZrAQkdt7zKlxkAObS7Xu9HxeiixEt6ZHaEtT4z7lteKC1FrYuB7waH_8lnz1tCkhT21xH_ME7YaXaMKKCFfCvIwY5ekfZJsa_Jg8OJLnyiOgwuGl0ccY9nexnAZ4TsMtnuHzMBaCYgahz8z4VpePvOquR8QooUygmvWlzjuvbtpmTJWRJIqTBb_kOPxpk8UDqjCj2Ll8GYqs5QrCDABVNarftUKmqykLNFLmmF-Sg_smcBquQtrmL7yG00QoFQnh9204ty-RFu7Q4Vx48WqVcLxrdIryNCQ==",
+              "id": "rs_0a3688cf4745caeb016aac5ee97064819398c5e9309fa32f3b",
+              "additional_properties": {}
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_r4CIGEtgPiohTrHduV3GyqYm",
+              "name": "public_source_search",
+              "arguments": "{\"query\":\"ACX synthetic quarterly earnings event announcement investor relations adjusted prices benchmark\"}",
+              "id": "af-call-8c03ef0cf9d94ca6b0d97947418a4058",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ee9ebec8193a6a4efcdb4a32dab",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_r4CIGEtgPiohTrHduV3GyqYm",
+              "result": "{\"event\": {\"event_id\": \"acx-2026-q2-earnings\", \"ticker\": \"ACX\", \"company\": \"Asteria Compute Systems\", \"event_type\": \"quarterly-earnings\", \"announced_at\": \"2026-08-05T16:15:00-04:00\", \"market_session\": \"after_close\"}, \"market\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-market-snapshot\", \"locator\": \"synthetic://market/adjusted-close/acx-chip\", \"currency\": \"USD\", \"adjusted\": true, \"ticker\": \"ACX\", \"benchmark\": \"CHIP\", \"rows\": [{\"date\": \"2026-08-03\", \"ACX\": 100.0, \"CHIP\": 100.0}, {\"date\": \"2026-08-04\", \"ACX\": 102.0, \"CHIP\": 101.0}, {\"date\": \"2026-08-05\", \"ACX\": 101.0, \"CHIP\": 100.0}, {\"date\": \"2026-08-06\", \"ACX\": 110.0, \"CHIP\": 103.0}, {\"date\": \"2026-08-07\", \"ACX\": 112.0, \"CHIP\": 104.0}, {\"date\": \"2026-08-10\", \"ACX\": 109.0, \"CHIP\": 103.5}, {\"date\": \"2026-08-11\", \"ACX\": 111.0, \"CHIP\": 104.2}, {\"date\": \"2026-08-12\", \"ACX\": 113.0, \"CHIP\": 105.0}]}, \"claims\": [{\"claim_id\": \"claim-revenue\", \"status\": \"reported_fact\", \"text\": \"Q2 revenue was $4.8 billion, up 18% year over year.\", \"evidence\": \"Revenue: $4.8B; year-over-year growth: 18%.\", \"source_id\": \"src-ir-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}, {\"claim_id\": \"claim-guidance\", \"status\": \"management_guidance\", \"text\": \"Management guided Q3 revenue to a range of $5.0 billion to $5.2 billion.\", \"evidence\": \"Q3 revenue outlook: $5.0B-$5.2B.\", \"source_id\": \"src-ir-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}, {\"claim_id\": \"claim-demand\", \"status\": \"management_commentary\", \"text\": \"Management cited hyperscaler accelerator demand as a growth driver.\", \"evidence\": \"Demand from hyperscale customers remained the principal growth driver.\", \"source_id\": \"src-ir-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}, {\"claim_id\": \"claim-margin-risk\", \"status\": \"risk_disclosure\", \"text\": \"Advanced-packaging capacity remained a constraint on gross-margin expansion.\", \"evidence\": \"Advanced-packaging supply may constrain shipment mix and gross margin.\", \"source_id\": \"src-filing-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}]}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"event\": {\"event_id\": \"acx-2026-q2-earnings\", \"ticker\": \"ACX\", \"company\": \"Asteria Compute Systems\", \"event_type\": \"quarterly-earnings\", \"announced_at\": \"2026-08-05T16:15:00-04:00\", \"market_session\": \"after_close\"}, \"market\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-market-snapshot\", \"locator\": \"synthetic://market/adjusted-close/acx-chip\", \"currency\": \"USD\", \"adjusted\": true, \"ticker\": \"ACX\", \"benchmark\": \"CHIP\", \"rows\": [{\"date\": \"2026-08-03\", \"ACX\": 100.0, \"CHIP\": 100.0}, {\"date\": \"2026-08-04\", \"ACX\": 102.0, \"CHIP\": 101.0}, {\"date\": \"2026-08-05\", \"ACX\": 101.0, \"CHIP\": 100.0}, {\"date\": \"2026-08-06\", \"ACX\": 110.0, \"CHIP\": 103.0}, {\"date\": \"2026-08-07\", \"ACX\": 112.0, \"CHIP\": 104.0}, {\"date\": \"2026-08-10\", \"ACX\": 109.0, \"CHIP\": 103.5}, {\"date\": \"2026-08-11\", \"ACX\": 111.0, \"CHIP\": 104.2}, {\"date\": \"2026-08-12\", \"ACX\": 113.0, \"CHIP\": 105.0}]}, \"claims\": [{\"claim_id\": \"claim-revenue\", \"status\": \"reported_fact\", \"text\": \"Q2 revenue was $4.8 billion, up 18% year over year.\", \"evidence\": \"Revenue: $4.8B; year-over-year growth: 18%.\", \"source_id\": \"src-ir-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}, {\"claim_id\": \"claim-guidance\", \"status\": \"management_guidance\", \"text\": \"Management guided Q3 revenue to a range of $5.0 billion to $5.2 billion.\", \"evidence\": \"Q3 revenue outlook: $5.0B-$5.2B.\", \"source_id\": \"src-ir-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}, {\"claim_id\": \"claim-demand\", \"status\": \"management_commentary\", \"text\": \"Management cited hyperscaler accelerator demand as a growth driver.\", \"evidence\": \"Demand from hyperscale customers remained the principal growth driver.\", \"source_id\": \"src-ir-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}, {\"claim_id\": \"claim-margin-risk\", \"status\": \"risk_disclosure\", \"text\": \"Advanced-packaging capacity remained a constraint on gross-margin expansion.\", \"evidence\": \"Advanced-packaging supply may constrain shipment mix and gross margin.\", \"source_id\": \"src-filing-acx-q2\", \"integrity\": \"trusted\", \"confidentiality\": \"public\"}]}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ee9ebec8193a6a4efcdb4a32dab",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "function_call",
+              "call_id": "call_4aRdep9ra2KDCiJdHCpBHU0z",
+              "name": "internal_api_lookup",
+              "arguments": "{\"resource\":\"policy\"}",
+              "id": "af-call-3b659e6e4b7945718c31b9ccdcb0ad08",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5eebe3b88193a8b64357d06a8322",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_4aRdep9ra2KDCiJdHCpBHU0z",
+              "result": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"policy\", \"data\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-internal-policy\", \"api\": \"mock://research-policy/v3/equity-event\", \"policy_id\": \"equity-event-research-standard\", \"version\": \"3.2.0\", \"target_sink\": \"shared-research-briefing\", \"rules\": {\"event_date\": {\"before_open\": \"same_trading_day\", \"during_session\": \"same_trading_day\", \"after_close\": \"next_trading_day\"}, \"prices_must_be_adjusted\": true, \"benchmark_required\": true, \"approved_benchmark\": \"CHIP\", \"causal_attribution_requires_primary_evidence\": true, \"required_sections\": [\"event_summary\", \"market_reaction\", \"portfolio_exposure\", \"thesis_update\", \"risks_and_uncertainties\", \"sources_and_methods\"], \"forbidden_output_fields\": [\"shares\", \"cost_basis\", \"weight_pct\"], \"human_approval_required\": true, \"lesson_promotion_requires\": [\"reviewer_approval\", \"regression_replay\"]}}}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"policy\", \"data\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-internal-policy\", \"api\": \"mock://research-policy/v3/equity-event\", \"policy_id\": \"equity-event-research-standard\", \"version\": \"3.2.0\", \"target_sink\": \"shared-research-briefing\", \"rules\": {\"event_date\": {\"before_open\": \"same_trading_day\", \"during_session\": \"same_trading_day\", \"after_close\": \"next_trading_day\"}, \"prices_must_be_adjusted\": true, \"benchmark_required\": true, \"approved_benchmark\": \"CHIP\", \"causal_attribution_requires_primary_evidence\": true, \"required_sections\": [\"event_summary\", \"market_reaction\", \"portfolio_exposure\", \"thesis_update\", \"risks_and_uncertainties\", \"sources_and_methods\"], \"forbidden_output_fields\": [\"shares\", \"cost_basis\", \"weight_pct\"], \"human_approval_required\": true, \"lesson_promotion_requires\": [\"reviewer_approval\", \"regression_replay\"]}}}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5eebe3b88193a8b64357d06a8322",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "function_call",
+              "call_id": "call_YNtkWvRyWvgPITkFgydsmhST",
+              "name": "internal_api_lookup",
+              "arguments": "{\"resource\":\"portfolio\"}",
+              "id": "af-call-d4f8b7f1e59141e0acddfae22e0d95de",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5eed69e08193ae9a5f6ad00a26be",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_YNtkWvRyWvgPITkFgydsmhST",
+              "result": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"portfolio\", \"data\": {\"ticker\": \"ACX\", \"exposure_band\": \"medium (2%-5%)\"}}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"portfolio\", \"data\": {\"ticker\": \"ACX\", \"exposure_band\": \"medium (2%-5%)\"}}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5eed69e08193ae9a5f6ad00a26be",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "function_call",
+              "call_id": "call_VMocMqVDTqA6xymz7sBx2SmC",
+              "name": "internal_api_lookup",
+              "arguments": "{\"resource\":\"thesis\"}",
+              "id": "af-call-06b5d3b4a44a4e0abe7769f15c91372d",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5eeee5208193beab71bbc3f6e179",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_VMocMqVDTqA6xymz7sBx2SmC",
+              "result": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"thesis\", \"data\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-internal-thesis\", \"api\": \"mock://research/v1/thesis/ACX\", \"ticker\": \"ACX\", \"version\": \"2026.07\", \"confidentiality\": \"internal\", \"thesis\": [{\"claim_id\": \"claim-thesis-demand\", \"status\": \"prior_assumption\", \"text\": \"Accelerator demand should remain the principal revenue-growth driver through 2026.\", \"evidence\": \"Approved internal thesis, July 2026.\"}, {\"claim_id\": \"claim-thesis-margin\", \"status\": \"prior_assumption\", \"text\": \"Packaging constraints may delay gross-margin expansion.\", \"evidence\": \"Approved internal risk assumption, July 2026.\"}]}}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"thesis\", \"data\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-internal-thesis\", \"api\": \"mock://research/v1/thesis/ACX\", \"ticker\": \"ACX\", \"version\": \"2026.07\", \"confidentiality\": \"internal\", \"thesis\": [{\"claim_id\": \"claim-thesis-demand\", \"status\": \"prior_assumption\", \"text\": \"Accelerator demand should remain the principal revenue-growth driver through 2026.\", \"evidence\": \"Approved internal thesis, July 2026.\"}, {\"claim_id\": \"claim-thesis-margin\", \"status\": \"prior_assumption\", \"text\": \"Packaging constraints may delay gross-margin expansion.\", \"evidence\": \"Approved internal risk assumption, July 2026.\"}]}}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5eeee5208193beab71bbc3f6e179",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF7xf0dV04eAjaTqFXB_ly9fecWijZOd_3yuFdcqZUNPWp6fj4I1N2AyLnmGINTf5qfc7ROgYPu5xPJlUMRLFRnnAtt32qLVFKNZHxo6XPhwo4WCA_CPhFPgBw0304jMkGC0-s7lPvhu68CGZTW77XElV8hTbpeU31tXR6-3sGqyqeQqvS94lPW_06MqpVjsq6AeWjQKuU_OM4s6tvGqd1q9feL3LS6MoM_kgnT2hW4oo7SPVZ1lv0FiLct-ZT_ouU0voy7PIzojRDCGfp0xlKZfOjFGtUfZUf-ztv7ZRb3lDK2cxrgBulEt_k_Qafr7VgXZpUSbp8l6B4hG_H6FEj0mG2xW7HlVQQazIK60rTotGzMoPE0ROrjmpb-x515B4NFCg6VeaplldHpkGxBLVGdVp-REGj5DIZaErcg8QVf76JKvltdoJJEVXBrrVTWpn0k5bDSHBryUp5MU39iPFPypdXzXV_wfXhhdVqo0JjC6-jds0DkZ4-yN8mRQHdmB7hxPx3AgGq5JT3FCjHw30xfKKg8m0dd9P8UyQ8lGwrta5gWn2EqQnx2oHYDi9vKZRJoBz-nUik_gOlhUOYjjXkKqrp1oEmj3j8JZnTlxGo7hZkYVJRfVHxOxa8SjHILlXr7RqjNHtgb00IqBlAHigwaXu8lYdlhzKRGJOuLA_pucYesI4ZQuTpIWGJt1_nN4ieAYnEYUHd350rmGenY4OJadt5GV3en4gwo5uSFyrVZ7fU6qX1CLXAJmLwKpjdcc1DgR-HYti1lyiu_YBi-cLjN2uToSEO8cWIpjJc2T3vIDMqJILfrxy1ed3ax7AI7h7vJECvQ5E9pC7S2Rrij-l4BItTXwrb9YyyPw13u3LkBVMRq9GVEWUcKreuHRQNJ2HK1IltcZGmlZaHRqKmoi-aeM6F6C6QCkN0mGZwlJVp3DfQIfeFhUh5WR9BZn_46ld3P3rvPIWYyUsheOZOY6N75N4tTBOmhB5PbgKP4Dd8cQuo1frHDrwz_YTq5HJcsg9nrQfXsuetw-vRXy6Q8ZhiG9x0F7x35dgEfizcuTE6p1LBQuq-L57OcsPoGghP9Tk70IQ3IXq7Yk6J5y6bOlLVLPDAGNGXH_09VKT1rEcet1JR6W3Lt3X8YOp12G8haCPIl3YJCYF0BRzN71iljmQufwUQ==",
+              "id": "rs_0a3688cf4745caeb016aac5ef06ba48193ba7a080b98e4140d",
+              "additional_properties": {}
+            },
+            {
+              "type": "text",
+              "text": "The snapshot identifies an after-close earnings release on 5 August 2026, making the next trading day the policy-directed event date. The approved benchmark is CHIP, prices are adjusted, and shared output may include only the medium exposure band\u2014not exact position fields. I\u2019ll now retrieve the remaining lesson context, calculate the event-day benchmark-adjusted return, and verify the artifact.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_MQkl5y2f12DLJ5SHG0X7GsVe",
+              "name": "internal_api_lookup",
+              "arguments": "{\"resource\":\"lessons\"}",
+              "id": "af-call-e23a6b021bb5400a831809c80b43e62e",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef13b008193aac509266a8c8172",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_MQkl5y2f12DLJ5SHG0X7GsVe",
+              "result": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"lessons\", \"data\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-lessons\", \"api\": \"mock://research/v1/lessons\", \"lessons\": [{\"lesson_id\": \"lesson-adjusted-prices\", \"scope\": \"abnormal-return-model\", \"status\": \"approved\", \"rule\": \"Use adjusted close values for both the security and its benchmark.\", \"regression_case\": \"split-in-window\"}]}}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"classification\": \"synthetic-illustrative\", \"resource\": \"lessons\", \"data\": {\"data_classification\": \"synthetic-illustrative\", \"source_id\": \"src-lessons\", \"api\": \"mock://research/v1/lessons\", \"lessons\": [{\"lesson_id\": \"lesson-adjusted-prices\", \"scope\": \"abnormal-return-model\", \"status\": \"approved\", \"rule\": \"Use adjusted close values for both the security and its benchmark.\", \"regression_case\": \"split-in-window\"}]}}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef13b008193aac509266a8c8172",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF70-Em_CsCPi_n9-SwWirZreziQAUpmGJdV90kdmlEQm4GfoR1t-1ZjngF2QfpPH3m5kFTQbh63yYimy7Ftjqi-OzK7zAPIM_X-5k8O5o0nwfTgYO9QtO96M39V8_oeMJ7COZdTseIxoQ-OxoBrh7pX3oFxxNtlf6sJ_eZidBJVTGUzWmOdakXwUTbjBux-AD3l3B8kg0Ju5A4T4gdZ50LJ97Nf7KSSqcXMebJC3odpFUbYR_SFSQ7XiQZybARaLqNwJKcXuwKuDsg2YM6D_npQW2cz56odYkwowPwT4K81J6O5Pj8CF-9W_L8XDjSeX-sd4S7kulCjzYazMTDlAQuVUDMnlkJLlc0vZQsUNVLtgpsMbRIPeJ27k-wpADNkhPJ5jyaauGXOuCFThuaNKZSfDVL_4DDZPpXkUrjdHr0lJcPn6xutcnlyw9REDfzqaXcIsM-A9cuVSIP_r05M-vltvpm66Wcv0I7D5jxEtCRuokMxBcseN8a0MJ8c20opDHVd397bmN7v07V01ao3KETQIzkoRqVby2RAJRPePjTQfVRHCv2eZ1tT0tCc7oiSGSD2vOczXj4HO1r7deRQMDxgouGM9s1YgS_YKeEm-dNYq9TSKo6Zrsb3HaqVDyOCvmxmqXELeCOqzIx7CjhPIWRu6Cgbd2XCpLchp0StP07uggkNNs2EGas5fw8bBU9hGhMnmeJT1cOy5Ip-aZ_pRnW_LTnSMFzlFKML2mVD5kmwu_98TYuZuXQQ9vs0Dvp6nYoGDV6LpeBsaZEgOgM9-6HVCyit2N8SMSvFrPgptVh8CfYdK6mHzDHLWoDcZ7ae06zoKTLwyQTzZvDa-h85vByqUWv2s24kqAv8nAkcobsoASstBsdlzlQrLQ0MTcGinyTlqasDGP4wLrMmiD0afa2PB2vTp3t_IbLWngLOnP7QSM1uhMQ1jebfL7nnYyqAh9q9nI1fzIEmHlhZ0xIkei1fstipf8VUgrz5lIMAlM72R-IMMlTP8Aa3M9P_LfUV-rWmi61HdTcibOiO2-GbiL6OHBWnnxg0DvsAFBTkFcol1IomrPGMFeItBk3WDInrI_AyrwcbZotyUSsTRUIj38hy7abd7LZAYT67dVo4RJlpTYnlLR88GuI1eNLt2TvjMG9QukGM8AKNzhBAuVJHKfqNVuf7nFdPOfjvnBOhj6ahNwXvuXAioZgDio2SzokLHnA5d3wgqc2zYi00acnuqBYBnEqoywjXDB2EwCRAgUeTaNpPHQpaAEmR8UjG7nbFqLYtxIy7HcgUeGO38xEFZIkcPdWAgUpCKuKDm4gPDkw5-_0=",
+              "id": "rs_0a3688cf4745caeb016aac5ef39ca48193ac3c6f6ceace47f5",
+              "additional_properties": {}
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_MB5frHsJGXWvPClVt4EOFDGM",
+              "name": "execute_analysis",
+              "arguments": "{\"event_date\":\"2026-08-06\",\"return_expression\":\"security_return - benchmark_return\"}",
+              "id": "af-call-b359028bab354b06bcf36c4df1f2d22b",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef402948193b2e7301ec9d5fbd6",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_MB5frHsJGXWvPClVt4EOFDGM",
+              "result": "{\"success\": true, \"return_code\": 0, \"stdout\": \"{\\\"analysis\\\": \\\"C:\\\\\\\\testing-misc\\\\\\\\modern-agent-harness\\\\\\\\demo\\\\\\\\live-evidence\\\\\\\\r-34c80beda5b222d1\\\\\\\\attempt-01\\\\\\\\analysis.json\\\", \\\"dashboard\\\": \\\"C:\\\\\\\\testing-misc\\\\\\\\modern-agent-harness\\\\\\\\demo\\\\\\\\live-evidence\\\\\\\\r-34c80beda5b222d1\\\\\\\\attempt-01\\\\\\\\dashboard.html\\\"}\", \"stderr\": \"\", \"script\": \"generated_analysis.py\", \"analysis\": \"analysis.json\", \"dashboard\": \"dashboard.html\"}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"success\": true, \"return_code\": 0, \"stdout\": \"{\\\"analysis\\\": \\\"C:\\\\\\\\testing-misc\\\\\\\\modern-agent-harness\\\\\\\\demo\\\\\\\\live-evidence\\\\\\\\r-34c80beda5b222d1\\\\\\\\attempt-01\\\\\\\\analysis.json\\\", \\\"dashboard\\\": \\\"C:\\\\\\\\testing-misc\\\\\\\\modern-agent-harness\\\\\\\\demo\\\\\\\\live-evidence\\\\\\\\r-34c80beda5b222d1\\\\\\\\attempt-01\\\\\\\\dashboard.html\\\"}\", \"stderr\": \"\", \"script\": \"generated_analysis.py\", \"analysis\": \"analysis.json\", \"dashboard\": \"dashboard.html\"}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef402948193b2e7301ec9d5fbd6",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "function_call",
+              "call_id": "call_nbKm8RQK8djBVmiliB8ASYqT",
+              "name": "todos_complete",
+              "arguments": "{\"items\":[{\"id\":1,\"reason\":\"Retrieved the synthetic public ACX earnings event, trusted claims, and adjusted ACX/CHIP price snapshot.\"},{\"id\":2,\"reason\":\"Retrieved policy, portfolio exposure band, thesis, and approved lessons; restricted fields were excluded.\"},{\"id\":3,\"reason\":\"Applied the after-close rule to select 2026-08-06 as the effective trading date.\"},{\"id\":4,\"reason\":\"Executed the approved abnormal-return expression successfully for 2026-08-06.\"}]}",
+              "id": "af-call-44c781c78d804337996915e13e17e913",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef618d881938be8b417f3a4a2db",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_nbKm8RQK8djBVmiliB8ASYqT",
+              "result": "{\"completed\": 4}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"completed\": 4}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef618d881938be8b417f3a4a2db",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF75xJJa_ouGRaOY79JvcAP-otV3wHv2MRuxS4GMaA1-5V9IAHs1eB3yOnqUmmlDul1471w2PJxiS6j7RiF1-Yivsu7xbKmyt25kAL8GMA4lM1n2exrLBt1fB8vaDBHU2qUA0lpu824tvLv8Cv3UEOqa24N_yDmSk2mtz5yAi5q4zCW_FCfsiv7hYihxKsbKHrRYujv3x7Tj1ZSIWs8ali3F2jP9YkNsNH_-JS6WJ76iqlLP5FUS0SkBWLAqgbGPJd7TtFkVRhm0ITreujwoh4BLy29_O-4D6NASnddbVRXSTJ3Q94tUVwgHRyK0kVwj25tgNOtIVuOL6vQxm0ecpod54uKAlp6WcPTcgN3RW0hAH5u6YKT_0gvRg0alG0_3K7Qcg7OiC8qmJcoNIZMR8mm5Ekp1K1TT1vG17kKJybYmdc80P46MbzBYEZw686eBzjP7qA3XdouwVSwNXAMve9CfHGsZVQYgYWJUClvCZvI7ubdm_kDzRBaM-Sc-Mzd_Pqu08MiYlBTvl74qFVxeGHK0pkVLMIb9Lh32VWQPYCZoHHFYABPWCaawPsFT1guH-px-5baRCKo7u4fV33rFiLNXAQaE9HwtCumLj-Xv7KJHE_nrsH9j1Ss6Z2GVbCSa00i2rRxutcV01eHm2GnmjIQEp5CI43JXpOK2KJ-csUB0Vlh2CzM4yKP64aRW4-1xqH3C71yEP2vth3N9QSSb69fnwCNOXBQcc3vooIK_ZyW5m56WSaoT3DbO7iMyCavSBSNjbVfCGQWJBQFO5TaLm4y3zW-zW7SNKem0tKxdQF27Qdpo9Tgnpg-yVKh7_CyM2Fuuskgey5fmW2_aWitm59pg1tZc-HMaEUV08SMig1nxx_s6j4o2nxSEsRBZHCmeWRBUno8i_10fsyNxxjMuCaVS0UNCxjpXShm603ErsDsJ39GeHlukgH58edgS-Z9wYaZCZnlZV9uYw8AUd1a7k-gDEHnOku55wDhOfHXe5vMlZXGlVbp9ItRIyBB4VMQkH6CU8P4k-qvd80qDoIcfg2IAv_fIc0b7WUwHdW6U-Sjlp0rKAGu2ZSdvFQ3OTTyoVZvAdRzEP2k2dQqLreKJiay_CXbj5lzjxqD5k3M4IFD-3s9PUpTQ-ck4652gG_1IBNwT",
+              "id": "rs_0a3688cf4745caeb016aac5ef83ab081938757b03c2a599d7f",
+              "additional_properties": {}
+            },
+            {
+              "type": "text",
+              "text": "The approved calculation executed successfully for 6 August 2026. Based on the adjusted closes, ACX returned 8.91%, CHIP returned 3.00%, and the arithmetic difference is a 5.91 percentage-point abnormal return; this describes relative price movement and is not causal proof. I\u2019ll now run the independent verifier before seeking review.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_YODtF3w5klvJAnznvLwcsO5I",
+              "name": "verify_analysis",
+              "arguments": "{}",
+              "id": "af-call-afb2469f0a3848c09f26534f2baea581",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef8f0e08193b5792d4c26f1896c",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_YODtF3w5klvJAnznvLwcsO5I",
+              "result": "{\"verifier_version\": \"equity-verifier/1.1\", \"passed\": true, \"checks\": [{\"code\": \"script_execution\", \"passed\": true, \"detail\": \"Generated Python exited successfully and produced JSON plus HTML.\", \"category\": \"Execution\"}, {\"code\": \"independent_recalculation\", \"passed\": true, \"detail\": \"Security, benchmark, and abnormal returns match an independent recomputation.\", \"category\": \"Verification\"}, {\"code\": \"approved_method\", \"passed\": true, \"detail\": \"Adjusted prices and the approved benchmark are required.\", \"category\": \"Governance\"}, {\"code\": \"claim_provenance\", \"passed\": true, \"detail\": \"Evidence IDs present: ['src-filing-acx-q2', 'src-internal-policy', 'src-internal-thesis', 'src-ir-acx-q2', 'src-market-snapshot']\", \"category\": \"Observability\"}, {\"code\": \"required_sections\", \"passed\": true, \"detail\": \"Required sections present: ['event_summary', 'market_reaction', 'portfolio_exposure', 'risks_and_uncertainties', 'sources_and_methods', 'thesis_update']\", \"category\": \"Lifecycle\"}, {\"code\": \"restricted_data_excluded\", \"passed\": true, \"detail\": \"No internal-only position fields reached the shared briefing.\", \"category\": \"Governance\"}, {\"code\": \"causal_claim_guard\", \"passed\": true, \"detail\": \"Untrusted causal commentary was excluded and uncertainty preserved.\", \"category\": \"Governance\"}, {\"code\": \"chart_data_integrity\", \"passed\": true, \"detail\": \"Inline SVG chart data matches machine-readable analysis values.\", \"category\": \"Verification\"}, {\"code\": \"event_date_alignment\", \"passed\": true, \"detail\": \"After-close event must map to 2026-08-06; analysis used 2026-08-06.\", \"category\": \"Verification\"}]}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"verifier_version\": \"equity-verifier/1.1\", \"passed\": true, \"checks\": [{\"code\": \"script_execution\", \"passed\": true, \"detail\": \"Generated Python exited successfully and produced JSON plus HTML.\", \"category\": \"Execution\"}, {\"code\": \"independent_recalculation\", \"passed\": true, \"detail\": \"Security, benchmark, and abnormal returns match an independent recomputation.\", \"category\": \"Verification\"}, {\"code\": \"approved_method\", \"passed\": true, \"detail\": \"Adjusted prices and the approved benchmark are required.\", \"category\": \"Governance\"}, {\"code\": \"claim_provenance\", \"passed\": true, \"detail\": \"Evidence IDs present: ['src-filing-acx-q2', 'src-internal-policy', 'src-internal-thesis', 'src-ir-acx-q2', 'src-market-snapshot']\", \"category\": \"Observability\"}, {\"code\": \"required_sections\", \"passed\": true, \"detail\": \"Required sections present: ['event_summary', 'market_reaction', 'portfolio_exposure', 'risks_and_uncertainties', 'sources_and_methods', 'thesis_update']\", \"category\": \"Lifecycle\"}, {\"code\": \"restricted_data_excluded\", \"passed\": true, \"detail\": \"No internal-only position fields reached the shared briefing.\", \"category\": \"Governance\"}, {\"code\": \"causal_claim_guard\", \"passed\": true, \"detail\": \"Untrusted causal commentary was excluded and uncertainty preserved.\", \"category\": \"Governance\"}, {\"code\": \"chart_data_integrity\", \"passed\": true, \"detail\": \"Inline SVG chart data matches machine-readable analysis values.\", \"category\": \"Verification\"}, {\"code\": \"event_date_alignment\", \"passed\": true, \"detail\": \"After-close event must map to 2026-08-06; analysis used 2026-08-06.\", \"category\": \"Verification\"}]}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5ef8f0e08193b5792d4c26f1896c",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF76XiXne1A7QLaEscf2M9pbXhFJNTPVEL40lBCl6CjVtChffgXGip8NGxh_2nXKgXPS7_SwxNjigaUSq4AwOYduOXVRamR1mTgw8wgpJTamQbpbAsJs4zBRRMPX5i-K3KDffEmHDVGGEcPMMHGUSScGDSvTvSHBm2xj3JDocu3TpNwqrLcyhDQRf1dHOyy5pxWz049XVyWUKlCCU6Ky2kGXtg6hzsOCOb0_ASW_ZYkYpM5As5OFVmIPzAnnK8ahDW3jn5wIFgg0dPX0WPqCpIZXVL5IlPxdgaTMfvVih9lua2CiiWKhh-v18j6oE7e8sGyrVlxIhhq6-3KoMB1vq3i8EasO9VlTjqsWYiCDgPQCp_G9XClvvTHyQRu3oLG9x7wVY6aE8BqtP0PuLTh3-4LdydkL5r8SQo7NFfQ78floFCLwjxnvMk01R4Ndk6X9Vdg0WjFvT4KOoXJz98RqCaKVZm9kMUSpGRY3Fu6DTN5J425MqeV5y0B2dcjkjpuRdzakuJK4LUJTXlfHKyMFoOK3-ckeff6cgJrI8ftjfw6DhLVvi5if7g3CKWwZS40_WPHYHsftA5eIRFxjDLK4FQf7rebKhIXjWXLUF3BTIW4ZQ2LaTG9K9M0_Ds-MDs425W7knszHar85AuPOx7T0-WVSZz7wvE4B4Czpt3iQEV_n24c9FdAipxVo8ZsA8VrNEoD3pKJ-8UghG9cam1qJ3KceRG_oXV8VSuWBJulVZXrick-yotfk-9szaxPZbEjld9rovJimbYlVX7fijn2i4EMplxB4Y_Zb95PkzAuZHMuuyv3FcaGbi7_lwGN_gM9ThUeStXxA9rSMPG4xVpCtTWQLwlRESNsE6-hMNfdo3W6w9FV0B6pYLDmX476ORwxqa2Pw5bRbttZmzALIiH2Lz3zTOEQmEii7QRWspEqKkCADBRi-apRfC7KexhTRSyieqkX8TPwcNK0pENKzUWlCpDjQUYX4MPXnS7-zYRGnxhWTCwedl3NLSzWqSyQxuq6P8gCd8OJ1qJZwdxH4UuCZFSLqGzcciIQZs469MZOLgqmrPb7vymyKJDlzuwPP6GMw0mv_u4B1OcajKx1c_xYiXx-KeeLDMy-sOk0xk7NXOdXi5sCow4NCZUSSPpX5t4WO4VhsceKJ3Zfod4bxkRn6my3ypb9fURFg34rUn3hKdI6Ch_yjQ4Zj-6o3_E9XAoQlODBiZf61QMYDdD2_lAPausX5OrLA0nAyjSKToXCHS8ukbkvyoaOaiLur6r10kTFNkmkK",
+              "id": "rs_0a3688cf4745caeb016aac5efa53ac8193bacd2615d9cb2678",
+              "additional_properties": {}
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_FEVwe0M4xH0FuxSQC58JQDjZ",
+              "name": "request_approval",
+              "arguments": "{}",
+              "id": "af-call-8c9b3c37aaef462dbdc62733adbac880",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5efaa1c4819383167919097f66b7",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_FEVwe0M4xH0FuxSQC58JQDjZ",
+              "result": "{\"approved\": true, \"receipt\": \"approval-5a86b6fba7785be9\", \"memory_record\": {\"kind\": \"verified-run-observation\", \"schema_version\": \"1.0\", \"source_trace_id\": \"a6befe8a38c49fb6bd53e3ccf03469fa\", \"policy_version\": \"3.2.0\", \"event_date_rule\": \"after_close -> next trading day\", \"benchmark\": \"CHIP\", \"classification\": \"synthetic-illustrative\"}, \"memory_description\": \"Verified prior-run observation, subordinate to current policy.\"}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"approved\": true, \"receipt\": \"approval-5a86b6fba7785be9\", \"memory_record\": {\"kind\": \"verified-run-observation\", \"schema_version\": \"1.0\", \"source_trace_id\": \"a6befe8a38c49fb6bd53e3ccf03469fa\", \"policy_version\": \"3.2.0\", \"event_date_rule\": \"after_close -> next trading day\", \"benchmark\": \"CHIP\", \"classification\": \"synthetic-illustrative\"}, \"memory_description\": \"Verified prior-run observation, subordinate to current policy.\"}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5efaa1c4819383167919097f66b7",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text_reasoning",
+              "text": "",
+              "protected_data": "gAAAAABqrF8QNtaOLmPktPDHDz_BTrfh6tI2xBdMZpYeBe3_XtWoT5o9ECV6qbLZtdRw91M__KXAK1Zl-6nqikSfYCGl_a6txWb81QwjWgModamok3cNGrOe0Gb_2aE3-JVPnBbHbIbdmaT7Xt4n6BgszEqlTg6qYvH3DDNEOrLSWmJKg91A9h4rYy4VGr9LfyjPBBWBmZYakq0i--009c5gfiGZumPErZAyiCBdWY4W7DR-WDg2kdirgPkc4SjdHXPz1qFAn45kLrefjWxBMcZkpyX230oqEI3UtE3o9Pw0oFMahwLhKb4mm8IAzMev-p2G2bg6Ifqx55n9HkTckUD6TkhGjwX53I1q4A40nZtZq9gqRaqYSrocgPxmLVsJY9KiriU2H1YghZxreBQsCcTua9zoqLMTiZHWvT8e0sMGla2E4H7cpYxGlOtA0bRJX5MTOHvMIoEzErWsRxMIDUSH7KyJ5kHuapQXzGzFbiZflEmcZW8R8SRugwnJ_Ol6hkF1Q3Q2rxTv1OGmPtmzfhAcvmCl24sYm0GqwTQDYwY-QNdsTF0or5dt-TFaTtz1ZXNXqSr9j57Cge2IOEvQ9sykN7NoUrie_yZ_b0riQZ6hTinYZ1UnvFvAWolcA9E3bb4HpggzsPsF7SZ1uI4R_PyRi2Rz8ySASZt6Miqba-k-gP8ODj9Pcmz0BxWu6lk1ICk2wag0w9S2Xx9m2-r6zNEdO9ArUuvbUR5aauILyjo4xJhaTb9cTzxL4Nv9SqeHBWT8_Rwv6vB3cn5UZn_j8q5AZd7Gr_22PMKml8yVe-DXwO2mO7raWUh6jCu7W9hu_yaOqDekCusVr4030K6G4YNvgAQ8u4r9cQ9h_-ZQACYD0OnBXTAyI87y84HuN0jddE9ECqwvHMHD5gMupUP4yPMuJyJOjOr0d9ZHgZOzYGrSApxcnnbx6izOgyjEAVEqNKvmEBSmP_LEf7I7ZirrXXUxzzl3HF6-V6Ogew7240hb5dZ3faz4S4WfXdOqvSgY0xhub9z1lCLDvVXD_gGNKbmgAZLbzcxLMQWRu6PdNsSGxUqQ8IMVTXgf18sVkIG2kF7GXaaK6BjU0IJFDijIbw9sOoINfZ5yX4IDzcQxbkWLPK_ycAkvK3iJmNMhxrRETIhuptNBVvaMe6UaovxxMK33UR9pwvSLCyfZ4ex9cXmnW8fWHLbcSSiD3QQdsCBlY6QNz_zxyH9M8n7HepshSrUYe5IcTKoC5SiaXpxO9y_fc0FUbdeSUsxOlqukcyqSeiHCLS3jOGCd",
+              "id": "rs_0a3688cf4745caeb016aac5f0f29e88193b65ddedb55ec5f15",
+              "additional_properties": {}
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_06v6UXJfjoe5OrIelb2LNE23",
+              "name": "todos_complete",
+              "arguments": "{\"items\":[{\"id\":5,\"reason\":\"Independent verification passed and reviewer approval was granted (receipt approval-5a86b6fba7785be9). Memory persistence is inapplicable because memory is disabled.\"}]}",
+              "id": "af-call-eefd0a13a27e4d1ea5b3ef27934c087d",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5f0f5b0081938f7a76490bd1d7f3",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_06v6UXJfjoe5OrIelb2LNE23",
+              "result": "{\"completed\": 1}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"completed\": 1}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5f0f5b0081938f7a76490bd1d7f3",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text",
+              "text": "All verification checks passed, including adjusted-price methodology, date alignment, restricted-field exclusion, provenance, and chart-data integrity. Reviewer approval was granted; because runtime memory is disabled, no episode-memory file can be written. I\u2019ll now formally complete the approved episode.",
+              "additional_properties": {
+                "logprobs": []
+              }
+            },
+            {
+              "type": "function_call",
+              "call_id": "call_AyUtagonNI1cQWpQffKgcxr1",
+              "name": "complete_episode",
+              "arguments": "{}",
+              "id": "af-call-f8e3a946be9d4b1c92246c01571e3110",
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5f1225708193ace345bc787b5501",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "tool",
+          "contents": [
+            {
+              "type": "function_result",
+              "call_id": "call_AyUtagonNI1cQWpQffKgcxr1",
+              "result": "{\"status\": \"completed\", \"certified\": true, \"trace_id\": \"a6befe8a38c49fb6bd53e3ccf03469fa\", \"model\": \"live\", \"deployment\": \"gpt-5.6-terra\", \"attempts\": 1, \"dashboard\": \"dashboard.html\", \"certificate\": \"evidence-certificate.json\", \"memory_recalled_from\": null}",
+              "items": [
+                {
+                  "type": "text",
+                  "text": "{\"status\": \"completed\", \"certified\": true, \"trace_id\": \"a6befe8a38c49fb6bd53e3ccf03469fa\", \"model\": \"live\", \"deployment\": \"gpt-5.6-terra\", \"attempts\": 1, \"dashboard\": \"dashboard.html\", \"certificate\": \"evidence-certificate.json\", \"memory_recalled_from\": null}",
+                  "additional_properties": {}
+                }
+              ],
+              "additional_properties": {
+                "fc_id": "fc_0a3688cf4745caeb016aac5f1225708193ace345bc787b5501",
+                "status": "completed"
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        },
+        {
+          "role": "assistant",
+          "contents": [
+            {
+              "type": "text",
+              "text": "## Certified synthetic ACX event analysis\n\n- **Event:** Asteria Compute Systems (ACX) Q2 earnings  \n- **Announcement:** 2026-08-05, 16:15 ET \u2014 after market close  \n- **Effective trading date:** **2026-08-06**, per the after-close \u2192 next-trading-day rule  \n- **Data:** Synthetic illustrative, adjusted close prices  \n- **Benchmark:** CHIP  \n\n### Market reaction on 2026-08-06\n- **ACX return:** **+8.91%**\n- **CHIP return:** **+3.00%**\n- **Abnormal return (ACX \u2212 CHIP):** **+5.91 percentage points**\n\nThis is a benchmark-relative price observation, not proof that any particular disclosure caused the move.\n\n### Reported event context\n- Q2 revenue: **$4.8B**, up **18% YoY** (`src-ir-acx-q2`)\n- Q3 revenue outlook: **$5.0B\u2013$5.2B** (`src-ir-acx-q2`)\n- Management described hyperscaler accelerator demand as a growth driver (`src-ir-acx-q2`)\n- Advanced-packaging capacity remained a disclosed constraint on gross-margin expansion (`src-filing-acx-q2`)\n\n### Portfolio and thesis context\n- Approved shared exposure disclosure: **medium (2%\u20135%)**\n- Demand commentary is consistent with the prior internal demand assumption.\n- Packaging-capacity risk remains a challenge/risk signal for margin expansion.\n\n### Controls and completion\n- Used adjusted prices and the approved CHIP benchmark.\n- Independent verification passed: calculation, effective date, evidence provenance, required briefing sections, restricted-data exclusion, and chart-data integrity.\n- Reviewer approval received: `approval-5a86b6fba7785be9`.\n- Episode formally completed and certified. Memory persistence was not applicable because memory is disabled.\n\n*This is a synthetic research-process demonstration, not investment advice.*",
+              "additional_properties": {
+                "logprobs": []
+              }
+            }
+          ],
+          "author_name": "equity-live-harness",
+          "additional_properties": {},
+          "type": "message"
+        }
+      ]
+    }
+  }
+}

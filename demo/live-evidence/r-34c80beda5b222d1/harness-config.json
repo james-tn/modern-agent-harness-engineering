@@ -1,0 +1,30 @@
+{
+  "model": "live",
+  "deployment": "gpt-5.6-terra",
+  "skill_mode": "all_loaded",
+  "available_skills": [
+    "abnormal-return-model",
+    "corporate-actions-monitor",
+    "credit-event-analysis",
+    "equity-event-analysis",
+    "event-date-alignment",
+    "evidence-verification",
+    "financial-source-retrieval",
+    "interactive-briefing",
+    "options-surface-analysis",
+    "portfolio-impact",
+    "research-policy"
+  ],
+  "enabled_tools": [
+    "public_source_search",
+    "internal_api_lookup",
+    "execute_analysis"
+  ],
+  "memory_enabled": false,
+  "memory_scope": "techhub-analyst",
+  "max_model_requests": 40,
+  "max_tool_calls": 60,
+  "max_execution_attempts": 3,
+  "execution_timeout_seconds": 15,
+  "gate_mode": "observe"
+}

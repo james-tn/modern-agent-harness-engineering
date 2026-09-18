@@ -1,0 +1,6 @@
+# Existing certificate inputs and recording storyboard use Windows endings.
+demo/sample-input/*.json text eol=crlf
+demo/recording/storyboard.json text eol=crlf
+
+# Retained native evidence must survive checkout without any byte conversion.
+demo/live-evidence/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

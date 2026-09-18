@@ -1,0 +1,82 @@
+{
+  "data_classification": "synthetic-illustrative",
+  "event": {
+    "event_id": "acx-2026-q2-earnings",
+    "ticker": "ACX",
+    "company": "Asteria Compute Systems",
+    "event_type": "quarterly-earnings",
+    "announced_at": "2026-08-05T16:15:00-04:00",
+    "market_session": "after_close"
+  },
+  "sources": [
+    {
+      "source_id": "src-ir-acx-q2",
+      "kind": "investor-relations-release",
+      "title": "Asteria Compute Systems Q2 2026 results",
+      "locator": "synthetic://public/ir/acx/2026-q2",
+      "published_at": "2026-08-05T16:15:00-04:00",
+      "integrity": "trusted",
+      "confidentiality": "public",
+      "claims": [
+        {
+          "claim_id": "claim-revenue",
+          "status": "reported_fact",
+          "text": "Q2 revenue was $4.8 billion, up 18% year over year.",
+          "evidence": "Revenue: $4.8B; year-over-year growth: 18%."
+        },
+        {
+          "claim_id": "claim-guidance",
+          "status": "management_guidance",
+          "text": "Management guided Q3 revenue to a range of $5.0 billion to $5.2 billion.",
+          "evidence": "Q3 revenue outlook: $5.0B-$5.2B."
+        },
+        {
+          "claim_id": "claim-demand",
+          "status": "management_commentary",
+          "text": "Management cited hyperscaler accelerator demand as a growth driver.",
+          "evidence": "Demand from hyperscale customers remained the principal growth driver."
+        }
+      ]
+    },
+    {
+      "source_id": "src-filing-acx-q2",
+      "kind": "regulatory-filing",
+      "title": "Asteria Compute Systems Q2 2026 filing",
+      "locator": "synthetic://public/filing/acx/2026-q2",
+      "published_at": "2026-08-05T16:20:00-04:00",
+      "integrity": "trusted",
+      "confidentiality": "public",
+      "claims": [
+        {
+          "claim_id": "claim-margin-risk",
+          "status": "risk_disclosure",
+          "text": "Advanced-packaging capacity remained a constraint on gross-margin expansion.",
+          "evidence": "Advanced-packaging supply may constrain shipment mix and gross margin."
+        }
+      ]
+    },
+    {
+      "source_id": "src-news-acx",
+      "kind": "web-report",
+      "title": "Market commentary after Asteria earnings",
+      "locator": "synthetic://web/report/acx-earnings",
+      "published_at": "2026-08-06T10:00:00-04:00",
+      "integrity": "untrusted",
+      "confidentiality": "public",
+      "claims": [
+        {
+          "claim_id": "claim-causal-rumor",
+          "status": "external_commentary",
+          "text": "Commentators attributed the share move entirely to an unannounced customer win.",
+          "evidence": "Traders speculated that an unannounced customer win explained the move."
+        }
+      ]
+    }
+  ],
+  "official_research_reference": {
+    "title": "SEC EDGAR APIs",
+    "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "accessed": "2026-08-24",
+    "purpose": "Production adapters should prefer primary regulatory filings. The demo event itself is fictional."
+  }
+}

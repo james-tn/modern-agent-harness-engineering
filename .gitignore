@@ -1,0 +1,14 @@
+node_modules/
+deck/rendered/
+*.tmp
+~$*.pptx
+
+# Scratch runs; curated examples are in demo/live-evidence.
+demo/agent/out/
+.venv/
+.env
+.env.*
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.playwright-mcp/

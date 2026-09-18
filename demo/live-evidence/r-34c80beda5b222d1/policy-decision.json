@@ -1,0 +1,26 @@
+{
+  "policy_id": "equity-event-research-standard",
+  "version": "3.2.0",
+  "sink": "shared-research-briefing",
+  "decision": "allow_after_approval",
+  "approval_required": true,
+  "admitted_claim_ids": [
+    "claim-revenue",
+    "claim-guidance",
+    "claim-demand",
+    "claim-margin-risk",
+    "claim-thesis-demand",
+    "claim-thesis-margin"
+  ],
+  "excluded_claim_ids": [
+    "claim-causal-rumor"
+  ],
+  "forbidden_output_fields": [
+    "shares",
+    "cost_basis",
+    "weight_pct"
+  ],
+  "reasons": [
+    "claim-causal-rumor: untrusted commentary cannot drive the shared briefing."
+  ]
+}

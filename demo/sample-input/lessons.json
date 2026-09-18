@@ -1,0 +1,14 @@
+{
+  "data_classification": "synthetic-illustrative",
+  "source_id": "src-lessons",
+  "api": "mock://research/v1/lessons",
+  "lessons": [
+    {
+      "lesson_id": "lesson-adjusted-prices",
+      "scope": "abnormal-return-model",
+      "status": "approved",
+      "rule": "Use adjusted close values for both the security and its benchmark.",
+      "regression_case": "split-in-window"
+    }
+  ]
+}

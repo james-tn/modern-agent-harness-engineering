@@ -1,0 +1,15 @@
+{
+  "name": "modern-agent-harness-engineering-deck",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Editable PowerPoint deck and demo artifacts for Modern Concepts and Techniques in Agent Harness Engineering.",
+  "scripts": {
+    "build": "node deck/generate.js",
+    "validate": "node deck/validate.js",
+    "check": "npm run build && npm run validate && npm run test:evidence",
+    "test:evidence": "node --test deck/validate-live.test.js deck/notes-contract.test.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "4.0.1"
+  }
+}

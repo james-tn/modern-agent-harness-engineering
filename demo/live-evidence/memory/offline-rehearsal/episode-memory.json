@@ -1,0 +1,1 @@
+{"kind": "verified-run-observation", "schema_version": "1.0", "source_trace_id": "197a9023d739f58e59d7d4291823e311", "policy_version": "3.2.0", "event_date_rule": "after_close -> next trading day", "benchmark": "CHIP", "classification": "synthetic-illustrative"}

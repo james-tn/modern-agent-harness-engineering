@@ -1,0 +1,91 @@
+{
+  "purpose": "Windows telemetry replacement regression with active browser polling",
+  "model": "scripted-tool-rehearsal",
+  "approval_kind": "automated-ui-validation-not-human",
+  "ui_poll_ms": 700,
+  "additional_driver_poll_ms": 400,
+  "driver_notes": "Initial driver selector/admission races caused /runs/null requests and tool timeouts; these were driver errors, not application run failures. Persisted run results below were checked independently.",
+  "run_count": 5,
+  "runs": [
+    {
+      "run_id": "r-0d636bbbeef03586",
+      "status": "completed",
+      "trace_id": "c2ee9bc82370b0a78235e27fc7103b76",
+      "certified": true,
+      "attempts": 2,
+      "memory_recalled_from": "e2097a4ef72bdba8f2f6ca534b43df8b",
+      "export_health": {
+        "status": "healthy",
+        "write_failures": 0,
+        "consecutive_failures": 0,
+        "last_error": null,
+        "last_failure_at": null,
+        "last_success_at": "2026-09-17T22:27:26.215856500Z"
+      }
+    },
+    {
+      "run_id": "r-1debb6405e233426",
+      "status": "completed",
+      "trace_id": "e2097a4ef72bdba8f2f6ca534b43df8b",
+      "certified": true,
+      "attempts": 2,
+      "memory_recalled_from": "8be9d0e59a72bb66a018e80dc2fc8c4a",
+      "export_health": {
+        "status": "healthy",
+        "write_failures": 0,
+        "consecutive_failures": 0,
+        "last_error": null,
+        "last_failure_at": null,
+        "last_success_at": "2026-09-17T22:25:00.408652500Z"
+      }
+    },
+    {
+      "run_id": "r-4192955250f4c456",
+      "status": "completed",
+      "trace_id": "8be9d0e59a72bb66a018e80dc2fc8c4a",
+      "certified": true,
+      "attempts": 2,
+      "memory_recalled_from": null,
+      "export_health": {
+        "status": "healthy",
+        "write_failures": 0,
+        "consecutive_failures": 0,
+        "last_error": null,
+        "last_failure_at": null,
+        "last_success_at": "2026-09-17T22:23:04.076733700Z"
+      }
+    },
+    {
+      "run_id": "r-ac49de90448042c4",
+      "status": "completed",
+      "trace_id": "a97965f199faf72dc346455bdca879c7",
+      "certified": true,
+      "attempts": 2,
+      "memory_recalled_from": "c2ee9bc82370b0a78235e27fc7103b76",
+      "export_health": {
+        "status": "healthy",
+        "write_failures": 0,
+        "consecutive_failures": 0,
+        "last_error": null,
+        "last_failure_at": null,
+        "last_success_at": "2026-09-17T22:28:52.304620900Z"
+      }
+    },
+    {
+      "run_id": "r-b0eb4966aa602d8c",
+      "status": "completed",
+      "trace_id": "4b46fd9d4803c4abb253ad29059d84ea",
+      "certified": true,
+      "attempts": 2,
+      "memory_recalled_from": "a97965f199faf72dc346455bdca879c7",
+      "export_health": {
+        "status": "healthy",
+        "write_failures": 0,
+        "consecutive_failures": 0,
+        "last_error": null,
+        "last_failure_at": null,
+        "last_success_at": "2026-09-17T22:30:10.442700000Z"
+      }
+    }
+  ]
+}
